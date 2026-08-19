@@ -3,6 +3,7 @@
   --color-text-header: #DABB9E; 
   --color-border: #FFEAD7; 
   --color-coffee: #603809; 
+  --color-coffee-bg :#221518;
   --color-text-box: #392624; 
   --color-text-box-black: #1E1E1E; 
   --color-box-btn: #F9C06A; 
@@ -10,4 +11,11 @@
   --color-box-border: #F9C06A; 
   --spacing-content: 1197px;
 
+}
+@font-face {
+  font-family: "Iran";
+  src: url(/public/font/fonnts.com-IRANSansXMedium.ttf);
+}
+body{
+  font-family: "Iran";
 }

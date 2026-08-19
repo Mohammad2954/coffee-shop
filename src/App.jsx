@@ -1,10 +1,11 @@
 import { useState } from "react";
+import Header from "./components/Headre/Header";
 
 function App() {
   return (
-    <div className="text-center text-text-header mt-52 mx-auto font-bold text-2xl">
-      hello !
-    </div>
+    <>
+      <Header />
+    </>
   );
 }
 
