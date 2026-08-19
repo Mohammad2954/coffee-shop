@@ -1,7 +1,5 @@
 @import "tailwindcss";
-
 @theme {
-  /* رنگ ساده */
   --color-text-header: #DABB9E; 
   --color-border: #FFEAD7; 
   --color-coffee: #603809; 
