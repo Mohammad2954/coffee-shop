@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Header from "./components/Headre/Header";
-import Category from "./components/category/category";
+import Category from "./components/category/Category";
 
 function App() {
   return (
