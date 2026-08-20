@@ -2,7 +2,8 @@
 @theme {
   --color-text-header: #DABB9E; 
   --color-border: #FFEAD7; 
-  --color-coffee: #603809; 
+  --color-coffee: #603809;
+  --color-bg-btn:rgba(247, 225, 188, 0.35); 
   --color-coffee-bg :#221518;
   --color-text-box: #392624; 
   --color-text-box-black: #1E1E1E; 
@@ -16,6 +17,13 @@
   font-family: "Iran";
   src: url(/public/font/fonnts.com-IRANSansXMedium.ttf);
 }
+@font-face {
+  font-family: "newfont";
+  src: url(../public/font/Far_KamranO.ttf);
+}
+/* h2{
+  font-family: "newfont";
+} */
 body{
   font-family: "Iran";
 }

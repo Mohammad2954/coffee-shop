@@ -1,7 +1,9 @@
+import Mainheader from "./Mainheader";
+
 function Header() {
   return (
-    <div className="bg-coffee-bg min-h-screen">
-      <div className="flex items-center justify-between max-w-content mx-auto px-8 py-12">
+    <div className="bg-coffee-bg sm:min-h-screen sm:p-0 pb-40">
+      <div className="flex items-center justify-between max-w-content mx-auto px-8 py-12 relative z-10">
         <div className="block sm:hidden">
           <button className="w-8 h-8 border border-border rounded-sm cursor-pointer flex items-center justify-center text-border">
             x
@@ -87,6 +89,7 @@ function Header() {
           </svg>
         </div>
       </div>
+      <Mainheader />
     </div>
   );
 }
