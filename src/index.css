@@ -15,11 +15,11 @@
 }
 @font-face {
   font-family: "Iran";
-  src: url(/public/font/fonnts.com-IRANSansXMedium.ttf);
+  src: url(/font/fonnts.com-IRANSansXMedium.ttf);
 }
 @font-face {
   font-family: "newfont";
-  src: url(../public/font/Far_KamranO.ttf);
+  src: url(/font/Far_KamranO.ttf);
 }
 /* h2{
   font-family: "newfont";
