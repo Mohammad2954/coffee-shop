@@ -1,84 +1,12 @@
 import Product from "./Product";
-
+import { data } from "../data.js";
 function Products() {
-  const data = [
-    {
-      id: 1,
-      image: "/img/pro/image.jpg",
-      name: "لاته",
-      description: "اسپرسو 30% | شیر بخارپز 70%",
-      price: 460000,
-    },
-    {
-      id: 2,
-      image: "/img/pro/image.jpg",
-      name: "اسپرسو",
-      description: "عصاره خالص قهوه | رست مدیوم",
-      price: 350000,
-    },
-    {
-      id: 3,
-      image: "/img/pro/image.jpg",
-      name: "کاپوچینو",
-      description: "اسپرسو 40% | شیر 40% | فوم شیر غلیظ",
-      price: 480000,
-    },
-    {
-      id: 4,
-      image: "/img/pro/image.jpg",
-      name: "موکا",
-      description: "اسپرسو | شیر | شکلات تلخ بلژیکی",
-      price: 520000,
-    },
-    {
-      id: 5,
-      image: "/img/pro/image.jpg",
-      name: "آمریکانو",
-      description: "شات اسپرسو | آب داغ",
-      price: 300000,
-    },
-    {
-      id: 6,
-      image: "/img/pro/image.jpg",
-      name: "فلت وایت",
-      description: "دبل اسپرسو | شیر میکروفوم ابریشمی",
-      price: 490000,
-    },
-    {
-      id: 7,
-      image: "/img/pro/image.jpg",
-      name: "ماکیاتو",
-      description: "اسپرسو | لکه‌ای از فوم شیر",
-      price: 380000,
-    },
-    {
-      id: 8,
-      image: "/img/pro/image.jpg",
-      name: "قهوه ترک",
-      description: "پودر قهوه ریزآسیاب | آب | هل (اختیاری)",
-      price: 320000,
-    },
-    {
-      id: 9,
-      image: "/img/pro/image.jpg",
-      name: "کلد برو",
-      description: "قهوه دم‌آوری شده سرد به مدت ۱۲ ساعت",
-      price: 550000,
-    },
-    {
-      id: 10,
-      image: "/img/pro/image.jpg",
-      name: "آفوگاتو",
-      description: "یک اسکوپ بستنی وانیلی | شات اسپرسو داغ",
-      price: 580000,
-    },
-  ];
   return (
     <div className="max-w-content mx-auto px-8 mt-20">
       <h3 className="text-coffee text-2xl font-bold">پر فروش ترین</h3>
       <div className="grid  grid-cols- lg:grid-cols-5 sm:grid-cols-3 gap-4 mt-[-1rem]">
         {data.map((pro) => {
-          return <Product {...pro} key={pro.id} />;
+          return <Product {...pro} key={pro.id} border={true} />;
         })}
       </div>
     </div>
