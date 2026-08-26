@@ -11,7 +11,7 @@ function PopProduct() {
           })}
         </div>
       </div>
-      <div className="w-full  bg-bg-btn absolute top-[-1rem] bottom-[-4.4rem] z-0"></div>
+      <div className="w-full  bg-[#FFE5BE] absolute top-[-1rem] bottom-[-4.4rem] z-0"></div>
     </div>
   );
 }
