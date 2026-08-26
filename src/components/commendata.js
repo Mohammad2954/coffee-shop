@@ -1,8 +1,8 @@
-const commentsData = [
+export const commentsData = [
   {
     "id": 1,
     "name": "علی محمدی",
-    "rating": 5,
+    "rating": 3,
     "comment": "لاته‌شون واقعاً فوق‌العاده بود! فوم شیر خیلی نرم بود و طعم قهوه کاملاً حس می‌شد. محیط کافه هم خیلی دنج و آرامش‌بخش بود.",
     "date": "۱۴۰۳/۰۸/۱۵",
     "avatar": "https://i.pravatar.cc/150?u=1"
@@ -23,22 +23,5 @@ const commentsData = [
     "date": "۱۴۰۳/۰۸/۱۰",
     "avatar": "https://i.pravatar.cc/150?u=3"
   },
-  {
-    "id": 4,
-    "name": "مریم رضایی",
-    "rating": 3,
-    "comment": "قهوه ترکشون بد نبود، ولی نسبت به حجمش قیمتش یکم بالا به نظر می‌رسه. کیک شکلاتی‌شون عالی بود و این نقطه قوتشونه.",
-    "date": "۱۴۰۳/۰۸/۰۵",
-    "avatar": "https://i.pravatar.cc/150?u=4"
-  },
-  {
-    "id": 5,
-    "name": "امیرحسین نوری",
-    "rating": 5,
-    "comment": "آفوگاتو محشر بود! ترکیب بستنی وانیلی با اسپرسوی داغ دقیقاً همون چیزی بود که نیاز داشتم. حتماً دوباره میام.",
-    "date": "۱۴۰۳/۰۷/۲۸",
-    "avatar": "https://i.pravatar.cc/150?u=5"
-  }
 ];
 
-export default commentsData;
