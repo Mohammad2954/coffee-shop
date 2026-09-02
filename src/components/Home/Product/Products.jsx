@@ -1,5 +1,5 @@
 import Product from "./Product";
-import { data } from "../data.js";
+import { data } from "../../data";
 function Products() {
   return (
     <div className="max-w-content mx-auto px-8 mt-20">

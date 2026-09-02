@@ -1,20 +1,17 @@
-import Header from "../components/Headre/Header";
-import Category from "../components/category/Category";
-import Products from "../components/Product/Products";
-import MainBox from "../components/MainBox/MainBox";
-import PopProduct from "../components/popProduct/PopProduct";
-import Comment from "../components/comment/Comment";
-import Footer from "../components/Footer/Footer";
+import Category from "../components/Home/category/Category";
+import Products from "../components/Home/Product/Products";
+import MainBox from "../components/Home/MainBox/MainBox";
+import PopProduct from "../components/Home/popProduct/PopProduct";
+import Comment from "../components/Home/comment/Comment";
+
 function Home() {
   return (
     <>
-      <Header />
       <Category />
       <Products />
       <MainBox />
       <PopProduct />
       <Comment />
-      <Footer />
     </>
   );
 }

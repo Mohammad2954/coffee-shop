@@ -1,4 +1,4 @@
-import Button from "../components/Button/Button";
+import Button from "../components/Page404/Button/Button";
 
 function Page404() {
   return (

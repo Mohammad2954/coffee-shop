@@ -1,4 +1,4 @@
-import { data } from "../data.js";
+import { data } from "../../data.js";
 import Product from "../Product/Product.jsx";
 function PopProduct() {
   return (

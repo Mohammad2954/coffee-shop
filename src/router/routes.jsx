@@ -1,9 +1,13 @@
 import { createBrowserRouter } from "react-router";
 import Home from "../pages/Home";
 import Page404 from "../pages/Page404";
-
+import RootLayout from "../components/RootLayout/RootLayout";
 const route = createBrowserRouter([
-  { path: "/home", element: <Home /> },
+  {
+    path: "/",
+    element: <RootLayout />,
+    children: [{ index: true, element: <Home /> }],
+  },
   { path: "/*", element: <Page404 /> },
 ]);
 export default route;
