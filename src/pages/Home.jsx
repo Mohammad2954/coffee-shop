@@ -4,6 +4,7 @@ import Products from "../components/Product/Products";
 import MainBox from "../components/MainBox/MainBox";
 import PopProduct from "../components/popProduct/PopProduct";
 import Comment from "../components/comment/Comment";
+import Footer from "../components/Footer/Footer";
 function Home() {
   return (
     <>
@@ -13,6 +14,7 @@ function Home() {
       <MainBox />
       <PopProduct />
       <Comment />
+      <Footer />
     </>
   );
 }
