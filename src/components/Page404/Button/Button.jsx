@@ -7,7 +7,7 @@ function Button() {
     <>
       <button
         onClick={() => {
-          GOHome("/home", { replace: true });
+          GOHome("/", { replace: true });
         }}
         className="mt-0 sm:mt-[-58px] flex items-center justify-center gap-1 border-b-2 font-serifs cursor-pointer
       "

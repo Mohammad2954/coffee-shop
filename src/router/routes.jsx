@@ -6,8 +6,14 @@ const route = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout />,
-    children: [{ index: true, element: <Home /> }],
+    children: [
+      { index: true, element: <Home /> },
+      {
+        path: "/*",
+        element: <Page404 />,
+        handle: { Footer: true },
+      },
+    ],
   },
-  { path: "/*", element: <Page404 /> },
 ]);
 export default route;
