@@ -11,6 +11,7 @@
   --color-box-bg: #FFF9F1; 
   --color-box-border: #F9C06A; 
   --spacing-content: 1197px;
+  --font-bold-AvenirNextCyr:"AvenirNextCyr";
 
 }
 @font-face {
@@ -20,6 +21,10 @@
 @font-face {
   font-family: "newfont";
   src: url(/font/Far_KamranO.ttf);
+}
+@font-face {
+  font-family: "AvenirNextCyr";
+  src: url(/font/AvenirNextCyr-Heavy.woff2);
 }
 /* h2{
   font-family: "newfont";
