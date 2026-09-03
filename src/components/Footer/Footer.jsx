@@ -10,8 +10,8 @@ function Footer() {
       />
       <div className=" absolute inset-0 h-96 bg-black/40 z-0"></div>
       <div className="grid  sm:grid-cols-3 lg:grid-cols-4 relative z-10">
-        <div className="grid grid-cols-2 sm:grid-cols-5 text-text-header col-span-3">
-          <div className="text-center  mb-8 sm:mb-0 col-span-3 mt-[-40px]">
+        <div className="grid grid-cols-2 sm:grid-cols-5 text-text-header col-span-full">
+          <div className="text-center sm:text-start  mb-8 sm:mb-0 col-span-3 mt-[-40px]">
             <svg
               className="m-auto sm:m-0"
               width="83"
@@ -57,11 +57,29 @@ function Footer() {
             </ul>
           </div>
         </div>
-        <img
-          src="/img/Footer/box.png"
-          className="hidden  lg:block lg:w-4/5 mt-[-70px]"
-          alt=""
-        />
+        <div className=" bg-[#FFE5BE] rounded-xl p-4 col-span-full grid grid-cols-1 sm:grid-cols-2 gap-4 sm:mt-8 mt-4">
+          <div className="">
+            <h4 className="text-text-box font-bold">اطلاع رسانی</h4>
+            <p className="text-coffee-bg text-[13px] ">
+              ایمیلتان را وارد کنید تا از تخفیف ها با خبر بشید
+            </p>
+          </div>
+          <div className="flex flex-row-reverse">
+            <input
+              className="bg-box-border text-coffee relative h-[59px] rounded-lg w-full pr-4 text-sm outline-0 lg:w-5/6"
+              type="text"
+              name=""
+              id=""
+              placeholder="ایمیل خود را واردکنید ..."
+            />
+            <button
+              className="px-4 py-2 bg-coffee text-white absolute left-6
+             bottom-[21px] rounded-lg"
+            >
+              ارسال
+            </button>
+          </div>
+        </div>
       </div>
       <div>
         <ul className="list-disc">
