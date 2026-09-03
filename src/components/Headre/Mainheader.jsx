@@ -1,6 +1,6 @@
 function Mainheader() {
   return (
-    <div className="flex flex-col-reverse sm:grid  sm:grid-cols-2 items-center justify-between max-w-content mx-auto px-8">
+    <div className="pt-[85px] flex flex-col-reverse sm:grid  sm:grid-cols-2 items-center justify-between max-w-content mx-auto px-8">
       <div>
         <div className=" relative ">
           <img

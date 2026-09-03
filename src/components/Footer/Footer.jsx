@@ -2,7 +2,7 @@ import "./Footer.css";
 
 function Footer() {
   return (
-    <footer className=" relative   bg-coffee-bg border-box-border border-t-2">
+    <footer className=" relative   bg-coffee-bg border-box-border border-t-2 mt-12">
       {/* <img src="/img/Footer/bg.jpg"
         className=" absolute inset-0 w-full h-96 z-0"
         alt=""/>
@@ -82,7 +82,7 @@ function Footer() {
                 placeholder="ایمیل خود را واردکنید ..."
               />
               <button
-                className="px-4 py-2 bg-coffee text-white absolute left-[-12]]
+                className="px-4 py-2 bg-coffee text-white absolute left-[-12px]
              bottom-[25px] rounded-lg"
               >
                 ارسال
