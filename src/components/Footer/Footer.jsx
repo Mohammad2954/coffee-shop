@@ -66,7 +66,7 @@ function Footer() {
               </li>
             </ul>
           </div>
-          <div className=" bg-[#FFE5BE] rounded-xl p-4 col-span-full grid grid-cols-1 sm:grid-cols-2 gap-4 sm:mt-8 mt-4">
+          <div className=" bg-[#FFE5BE] rounded-xl p-4 col-span-full grid grid-cols-1 sm:grid-cols-2 gap-4 sm:mt-8 mx-[-40px] mt-4">
             <div className="">
               <h4 className="text-text-box font-bold">اطلاع رسانی</h4>
               <p className="text-coffee-bg text-[13px] ">
@@ -82,7 +82,7 @@ function Footer() {
                 placeholder="ایمیل خود را واردکنید ..."
               />
               <button
-                className="px-4 py-2 bg-coffee text-white absolute left-6
+                className="px-4 py-2 bg-coffee text-white absolute left-[-12]]
              bottom-[25px] rounded-lg"
               >
                 ارسال
@@ -91,9 +91,11 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className="border-box-border border-t-2 mt-8 p-4">
-        <div className="flex items-center justify-between">
-          <span>کلیه حقوق مطعلق به همینجاست .</span>
+      <div className="border-box-border border-t-2 p-4">
+        <div className="flex items-center justify-between sm:flex-row flex-col gap-2">
+          <span className="text-text-header text-sm">
+            کلیه حقوق مطعلق به همینجاست .
+          </span>
           <div className="flex items-center gap-2 ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
