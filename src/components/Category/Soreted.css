@@ -4,11 +4,5 @@
     -moz-transition: all 400ms ease;
     -ms-transition: all 400ms ease;
     -o-transition: all 400ms ease;
-    opacity: 0;
-    visibility: hidden;
-}
-.select-item:hover ~ .hide-item {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+
 }

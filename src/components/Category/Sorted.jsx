@@ -1,8 +1,17 @@
+import { useState } from "react";
 import "./Soreted.css";
 function Sorted() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div className="relative">
-      <div className="flex items-center gap-2 rounded-sm border border-coffee-bg w-fit py-1 px-2 select-item">
+      <div
+        onClick={() => {
+          setIsOpen(!isOpen);
+          console.log(isOpen);
+        }}
+        className="flex items-center gap-2 rounded-sm border border-coffee-bg w-fit py-1 px-2 select-item"
+      >
         <span>مرتب سازی بر اساس جدید ترین</span>
         <div>
           <svg
@@ -16,23 +25,26 @@ function Sorted() {
           </svg>
         </div>
       </div>
-
-      <div className="border border-coffee-bg w-fit rounded-sm  hide-item absolute top-[0]">
-        <ul className="">
-          <li className="hover:bg-amber-950 px-2 py-1 cursor-pointer">
-            مرتب سازی بر اساس جدید ترین{" "}
-          </li>
-          <li className="hover:bg-amber-950 px-2 py-1 cursor-pointer">
-            مرتب سازی بر اساس محبوبیت{" "}
-          </li>
-          <li className="hover:bg-amber-950 px-2 py-1 cursor-pointer">
-            مرتب سازی بر اساس قیمت کم{" "}
-          </li>
-          <li className="hover:bg-amber-950 px-2 py-1 cursor-pointer">
-            مرتب سازی بر اساس قیمت زیاد{" "}
-          </li>
-        </ul>
-      </div>
+      {isOpen ? (
+        <div className="border border-coffee-bg w-fit rounded-sm  hide-item absolute top-[38px]">
+          <ul className="">
+            <li className="hover:bg-amber-950 px-2 py-1 cursor-pointer">
+              مرتب سازی بر اساس جدید ترین{" "}
+            </li>
+            <li className="hover:bg-amber-950 px-2 py-1 cursor-pointer">
+              مرتب سازی بر اساس محبوبیت{" "}
+            </li>
+            <li className="hover:bg-amber-950 px-2 py-1 cursor-pointer">
+              مرتب سازی بر اساس قیمت کم{" "}
+            </li>
+            <li className="hover:bg-amber-950 px-2 py-1 cursor-pointer">
+              مرتب سازی بر اساس قیمت زیاد{" "}
+            </li>
+          </ul>
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 }
