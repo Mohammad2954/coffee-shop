@@ -734,9 +734,9 @@ function Category() {
     },
   ];
   return (
-    <div className="max-w-content mx-auto px-8 mt-16">
+    <div className="max-w-content mx-auto px-8 mt-16 ">
       <h4 className="text-coffee text-2xl font-bold">دسته بندی محصولات</h4>
-      <div className="grid grid-cols-2 lg:grid-cols-5 sm:grid-cols-3 gap-2">
+      <div className="grid grid-cols-2 lg:grid-cols-5 sm:grid-cols-3 gap-2 ">
         {categories.map((cat) => (
           <Boxcategory key={cat.id} {...cat} />
         ))}

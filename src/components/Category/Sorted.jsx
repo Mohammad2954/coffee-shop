@@ -8,7 +8,6 @@ function Sorted() {
       <div
         onClick={() => {
           setIsOpen(!isOpen);
-          console.log(isOpen);
         }}
         className="flex items-center gap-2 rounded-sm border border-coffee-bg w-fit py-1 px-2 select-item"
       >
@@ -26,18 +25,18 @@ function Sorted() {
         </div>
       </div>
       {isOpen ? (
-        <div className="border border-coffee-bg w-fit rounded-sm  hide-item absolute top-[38px]">
+        <div className="border border-coffee-bg w-fit rounded-sm  hide-item absolute top-[38px]   bg-[#ffe5beaa]  ">
           <ul className="">
-            <li className="hover:bg-amber-950 px-2 py-1 cursor-pointer">
+            <li className="hover:bg-amber-950 hover:text-text-header px-2 py-1 cursor-pointer">
               مرتب سازی بر اساس جدید ترین{" "}
             </li>
-            <li className="hover:bg-amber-950 px-2 py-1 cursor-pointer">
+            <li className="hover:bg-amber-950 hover:text-text-header px-2 py-1 cursor-pointer">
               مرتب سازی بر اساس محبوبیت{" "}
             </li>
-            <li className="hover:bg-amber-950 px-2 py-1 cursor-pointer">
+            <li className="hover:bg-amber-950 hover:text-text-header px-2 py-1 cursor-pointer">
               مرتب سازی بر اساس قیمت کم{" "}
             </li>
-            <li className="hover:bg-amber-950 px-2 py-1 cursor-pointer">
+            <li className="hover:bg-amber-950 hover:text-text-header px-2 py-1 cursor-pointer">
               مرتب سازی بر اساس قیمت زیاد{" "}
             </li>
           </ul>

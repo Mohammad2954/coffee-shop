@@ -1,9 +1,10 @@
 import BreadCramb from "../components/BreadCramb/BreadCramb";
+import Sidebar from "../components/Category/Sidebar";
 import Sorted from "../components/Category/Sorted";
 
 function Category() {
   return (
-    <div className="max-w-content mx-auto mt-20 ">
+    <div className=" mx-auto mt-20 px-8">
       <BreadCramb />
       <div className=" bg-[#FFE5BE]    px-8  rounded-lg flex items-center justify-between py-4">
         <div className="flex gap-4 justify-between ga-4 w-full sm:flex-row flex-col">
@@ -60,6 +61,9 @@ function Category() {
 
           <Sorted />
         </div>
+      </div>
+      <div className="grid grid-cols-4">
+        <Sidebar />
       </div>
     </div>
   );

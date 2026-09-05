@@ -1,4 +1,4 @@
-import Category from "../components/Home/category/Category";
+import CategoryProduct from "../components/Home/CategoryProduct/CategoryProduct";
 import Products from "../components/Home/Product/Products";
 import MainBox from "../components/Home/MainBox/MainBox";
 import PopProduct from "../components/Home/popProduct/PopProduct";
@@ -9,7 +9,7 @@ function Home() {
   return (
     <>
       <Mainheader />
-      <Category />
+      <CategoryProduct />
       <Products />
       <MainBox />
       <PopProduct />
