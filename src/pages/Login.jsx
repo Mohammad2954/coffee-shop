@@ -1,13 +1,23 @@
 import React from "react";
+import { useNavigate } from "react-router";
 
 function Login() {
   document.documentElement.style.backgroundColor = "#392624";
+  const x = useNavigate();
   return (
     <div className="px-8">
       <div className="max-w-xl  bg-[#FFE5BE] mx-auto mt-20 rounded-lg pb-8">
         <h1 className=" border-b-2 border-box-border block pb-3 text-xl text-center  pt-4">
           ورود
         </h1>
+        <span
+          className="text-sm text-coffee-bg  block text-center mt-2 cursor-pointer"
+          onClick={() => {
+            x("/signup");
+          }}
+        >
+          حسابی ندارید؟
+        </span>
         <div className="mt-4 px-2 sm:px-16">
           <div className="flex flex-col gap-2 mt-4 ">
             <label htmlFor="email" className="text-sm text-coffee-bg">
