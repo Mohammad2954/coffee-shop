@@ -3,6 +3,7 @@ import Sidebar from "../components/Category/Sidebar";
 import Sorted from "../components/Category/Sorted";
 import { data } from "../components/data";
 import Product from "../components/Home/Product/Product";
+import Paigination from "../components/Paigination/Paigination";
 function Category() {
   return (
     <div className=" mx-auto mt-20 px-8">
@@ -72,6 +73,9 @@ function Category() {
             <Product {...event} key={event.id} border={true} />
           ))}
         </div>
+      </div>
+      <div className="mt-16">
+        <Paigination />
       </div>
     </div>
   );
