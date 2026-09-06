@@ -1,7 +1,8 @@
 import BreadCramb from "../components/BreadCramb/BreadCramb";
 import Sidebar from "../components/Category/Sidebar";
 import Sorted from "../components/Category/Sorted";
-
+import { data } from "../components/data";
+import Product from "../components/Home/Product/Product";
 function Category() {
   return (
     <div className=" mx-auto mt-20 px-8">
@@ -63,7 +64,14 @@ function Category() {
         </div>
       </div>
       <div className="grid grid-cols-4">
-        <Sidebar />
+        <div className="hidden sm:block">
+          <Sidebar />
+        </div>
+        <div className="col-span-4 sm:col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {data.map((event) => (
+            <Product {...event} key={event.id} border={true} />
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -25,7 +25,7 @@ function Sorted() {
         </div>
       </div>
       {isOpen ? (
-        <div className="border border-coffee-bg w-fit rounded-sm  hide-item absolute top-[38px]   bg-[#ffe5beaa]  ">
+        <div className="border border-coffee-bg w-fit rounded-sm  hide-item absolute top-[38px]   bg-[#ffe5beaa]  z-10">
           <ul className="">
             <li className="hover:bg-amber-950 hover:text-text-header px-2 py-1 cursor-pointer">
               مرتب سازی بر اساس جدید ترین{" "}
