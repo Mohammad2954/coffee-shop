@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router";
+
 function Header() {
+  const x = useNavigate();
   return (
     <div className="bg-coffee-bg border-box-border border-b-2  flex items-center justify-between  w-full mx-auto px-8 py-2  z-50 sticky top-0">
       <div className="block sm:hidden">
@@ -8,6 +11,10 @@ function Header() {
       </div>
       <div className="flex items-center lg:gap-12 gap-8 ml-4">
         <svg
+          onClick={() => {
+            x("/");
+          }}
+          className=" cursor-pointer"
           width="83"
           height="67"
           viewBox="0 0 83 67"
@@ -44,6 +51,9 @@ function Header() {
       </div>
       <div className="flex items-center gap-6 sm:gap-8 lg:gap-10">
         <svg
+          onClick={() => {
+            x("/signup");
+          }}
           className=" cursor-pointer"
           width="27"
           height="27"
@@ -59,7 +69,10 @@ function Header() {
           />
         </svg>
         <svg
-          className=" cursor-pointer"
+          className=" cursor-pointer "
+          onClick={() => {
+            x("cart");
+          }}
           width="28"
           height="30"
           viewBox="0 0 28 30"

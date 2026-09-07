@@ -2,8 +2,8 @@ import React from "react";
 import { useNavigate } from "react-router";
 
 function Login() {
-  document.documentElement.style.backgroundColor = "#392624";
   const x = useNavigate();
+
   return (
     <div className="px-8">
       <div className="max-w-xl  bg-[#FFE5BE] mx-auto mt-20 rounded-lg pb-8">

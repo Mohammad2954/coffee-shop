@@ -2,7 +2,6 @@ import React from "react";
 import { useNavigate } from "react-router";
 
 function SignUp() {
-  document.documentElement.style.backgroundColor = "#392624";
   const x = useNavigate();
   return (
     <div className="px-8">

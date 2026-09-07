@@ -5,6 +5,7 @@ import RootLayout from "../components/RootLayout/RootLayout";
 import Category from "../pages/Category";
 import Login from "../pages/Login";
 import SignUp from "../pages/SignUp";
+import Cart from "../pages/Cart";
 const route = createBrowserRouter([
   {
     path: "/",
@@ -14,6 +15,7 @@ const route = createBrowserRouter([
       { path: "category", element: <Category /> },
       { path: "login", element: <Login /> },
       { path: "signup", element: <SignUp /> },
+      { path: "cart", element: <Cart /> },
       {
         path: "/*",
         element: <Page404 />,
