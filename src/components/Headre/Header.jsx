@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router";
+import AddProducts from "../Cart/AddProducts";
 
 function Header() {
   const x = useNavigate();
@@ -49,7 +50,7 @@ function Header() {
           </li>
         </ul>
       </div>
-      <div className="flex items-center gap-6 sm:gap-8 lg:gap-10">
+      <div className="flex items-center gap-6 sm:gap-8 lg:gap-10 ">
         <svg
           onClick={() => {
             x("/signup");
@@ -68,9 +69,9 @@ function Header() {
             fill="#DABB9E"
           />
         </svg>
-        <div className="relative">
+        <div className="relative group transition">
           <svg
-            className=" cursor-pointer "
+            className=" cursor-pointer transition"
             onClick={() => {
               x("cart");
             }}
@@ -85,7 +86,52 @@ function Header() {
               fill="#FFEAD7"
             />
           </svg>
-          <div className=" absolute left-0 top-10 w-96 h-42 bg-white"></div>
+          <div className=" absolute left-0 top-10 w-96 bg-white border overflow-hidden rounded-lg invisible group-hover:visible opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-600 ease-out ">
+            <h4 className="text-center mt-2 border-b pb-2">سبد خرید</h4>
+
+            <div className="mt-4 flex items-center gap-4 px-3">
+              <img
+                src="/img/pro/image.jpg"
+                alt=""
+                className="w-20 rounded-lg"
+              />
+              <div className="flex flex-col">
+                <span className="text-text-box font-bold">لاته</span>
+                <span>80000 تومان</span>
+              </div>
+              <AddProducts />
+              <div className=" absolute left-3 cursor-pointer">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  className="text-red-800 size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18 18 6M6 6l12 12"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div className="flex items-center justify-between px-3 mt-4 border-t py-3">
+              <span className="text-coffee text-sm">مبلغ قابل پرداخت</span>
+              <div className="flex items-center gap-2">
+                <span>85,000</span>
+                <p>تومان</p>
+              </div>
+            </div>
+            <div>
+              <div>
+                <button className="w-full py-2 text-center text-text-header font-bold bg-coffee-bg">
+                  مشاهده سبد خرید
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
         <svg
           className=" cursor-pointer"
