@@ -4,12 +4,14 @@ import BreadCramb from "../components/BreadCramb/BreadCramb";
 function ContactUs() {
   return (
     <div className="max-w-content mx-auto px-8">
-      <div>
+      <div className="my-8">
         <BreadCramb />
-        <h2 className="text-2xl font-bold text-coffee">ارتباط با ما</h2>
+        <h2 className="text-2xl font-bold text-coffee mt-12 mr-4">
+          ارتباط با ما
+        </h2>
       </div>
       <div className="grid grid-cols-12 gap-4  ">
-        <div className=" col-span-full sm:col-span-6 shadow-[0_0_40px_-5px_rgba(0,0,0,0.25)] p-4 rounded-3xl rounded-tr-none pb-6">
+        <div className=" h-fit bg-[#FFE5BE] col-span-full sm:col-span-6 shadow-[0_0_40px_-5px_rgba(0,0,0,0.25)] p-4 rounded-3xl rounded-tr-none pb-6">
           <div className="mb-8 border-r pr-3">
             <h4 className="font-bold text-text-box text-xl">ارسال پیام</h4>
             <p className="text-[14px] mt-3">به پیام شما پاسخ میدهیم</p>
@@ -17,18 +19,18 @@ function ContactUs() {
           <form action="" className="grid grid-cols-4 gap-3">
             <input
               type="text"
-              className="text-sm bg-[#FFE5BE] outline-0 rounded-lg py-2 px-4 col-span-full sm:col-span-2"
+              className="text-sm bg-[#302310] text-white outline-0 rounded-lg py-2 px-4 col-span-full sm:col-span-2"
               placeholder="نام شما (الزامی)"
             />
 
             <input
               type="text"
-              className="text-sm bg-[#FFE5BE] outline-0 rounded-lg py-2 px-4  col-span-full sm:col-span-2"
+              className="text-sm bg-[#302310] text-white outline-0 rounded-lg py-2 px-4  col-span-full sm:col-span-2"
               placeholder="ایمیل شما (الزامی)"
             />
 
             <textarea
-              className="bg-[#FFE5BE] outline-0 rounded-lg col-span-4 py-2 px-4 text-sm"
+              className="bg-[#302310] text-white outline-0 rounded-lg col-span-4 py-2 px-4 text-sm"
               name=""
               id=""
               placeholder="پیام شما"
@@ -39,9 +41,9 @@ function ContactUs() {
           </form>
         </div>
         <div className=" col-span-full sm:col-span-6 ">
-          <div className="shadow-[0_0_40px_-5px_rgba(0,0,0,0.25)] p-4 rounded-3xl rounded-tr-none pb-6">
+          <div className="bg-[#FFE5BE] shadow-[0_0_40px_-5px_rgba(0,0,0,0.25)] p-4 rounded-3xl rounded-tr-none pb-6">
             <div>
-              <img src="/img/Footer/box.png" alt="" className="mx-auto" />
+              <img src="/img/Footer/box.png" alt="" className="mx-auto " />
             </div>
             <div className="flex flex-col gap-4 mt-6">
               <span className=" flex items-center gap-3">
