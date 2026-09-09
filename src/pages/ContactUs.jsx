@@ -6,7 +6,7 @@ function ContactUs() {
     <div className="max-w-content mx-auto px-8">
       <div className="my-8">
         <BreadCramb />
-        <h2 className="text-2xl font-bold text-coffee mt-12 mr-4">
+        <h2 className="text-2xl font-bold text-coffee mt-8 mr-4">
           ارتباط با ما
         </h2>
       </div>

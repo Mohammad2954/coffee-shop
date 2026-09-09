@@ -7,6 +7,7 @@ import Login from "../pages/Login";
 import SignUp from "../pages/SignUp";
 import Cart from "../pages/Cart";
 import ContactUs from "../pages/ContactUs";
+import Blog from "../pages/Blog";
 const route = createBrowserRouter([
   {
     path: "/",
@@ -18,6 +19,7 @@ const route = createBrowserRouter([
       { path: "signup", element: <SignUp /> },
       { path: "cart", element: <Cart /> },
       { path: "contact-us", element: <ContactUs /> },
+      { path: "blog", element: <Blog /> },
       {
         path: "/*",
         element: <Page404 />,
