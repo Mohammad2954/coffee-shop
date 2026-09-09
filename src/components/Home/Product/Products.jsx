@@ -6,7 +6,7 @@ function Products() {
       <h3 className="text-coffee text-2xl font-bold">پر فروش ترین</h3>
       <div className="grid  grid-cols- lg:grid-cols-5 sm:grid-cols-3 gap-4 mt-[-1rem]">
         {data.map((pro) => {
-          return <Product {...pro} key={pro.id} border={true} />;
+          return <Product {...pro} key={pro.id} />;
         })}
       </div>
     </div>

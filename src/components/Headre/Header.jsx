@@ -4,7 +4,7 @@ import AddProducts from "../Cart/AddProducts";
 function Header() {
   const x = useNavigate();
   return (
-    <div className="bg-coffee-bg border-box-border border-b-2  flex items-center justify-between  w-full mx-auto px-8 py-2  z-50 sticky top-0">
+    <div className="bg-coffee-bg  border-box-border border-b-2  flex items-center justify-between  w-full mx-auto px-8 py-2  z-50 sticky top-0">
       <div className="block sm:hidden">
         <button className="w-8 h-8 border border-border rounded-sm cursor-pointer flex items-center justify-center text-border">
           x
