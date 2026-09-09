@@ -6,6 +6,7 @@ import Category from "../pages/Category";
 import Login from "../pages/Login";
 import SignUp from "../pages/SignUp";
 import Cart from "../pages/Cart";
+import ContactUs from "../pages/ContactUs";
 const route = createBrowserRouter([
   {
     path: "/",
@@ -16,6 +17,7 @@ const route = createBrowserRouter([
       { path: "login", element: <Login /> },
       { path: "signup", element: <SignUp /> },
       { path: "cart", element: <Cart /> },
+      { path: "contact-us", element: <ContactUs /> },
       {
         path: "/*",
         element: <Page404 />,

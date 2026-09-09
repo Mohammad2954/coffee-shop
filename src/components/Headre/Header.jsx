@@ -39,7 +39,12 @@ function Header() {
           <li className=" cursor-pointer hover:text-border transition duration-200 ease-in">
             پشتیبانی
           </li>
-          <li className=" cursor-pointer hover:text-border transition duration-200 ease-in">
+          <li
+            className=" cursor-pointer hover:text-border transition duration-200 ease-in"
+            onClick={() => {
+              x("contact-us");
+            }}
+          >
             ارتباط با ما
           </li>
           <li className=" cursor-pointer hover:text-border transition duration-200 ease-in">
@@ -134,6 +139,9 @@ function Header() {
           </div>
         </div>
         <svg
+          onClick={() => {
+            x("category");
+          }}
           className=" cursor-pointer"
           width="28"
           height="28"
