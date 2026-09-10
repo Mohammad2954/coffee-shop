@@ -1,15 +1,32 @@
 import { useNavigate } from "react-router";
+import { useState } from "react";
 import AddProducts from "../Cart/AddProducts";
+import clsx from "clsx";
 
 function Header() {
   const x = useNavigate();
+  const [isShow, setIsShow] = useState(false);
+
   return (
     <div className="bg-coffee-bg  border-box-border border-b-2  flex items-center justify-between  w-full mx-auto px-8 py-2  z-50 sticky top-0">
       <div className="block sm:hidden">
-        <button className="w-8 h-8 border border-border rounded-sm cursor-pointer flex items-center justify-center text-border">
+        <button
+          onClick={() => {
+            setIsShow(true);
+          }}
+          className="w-8 h-8 border border-border rounded-sm cursor-pointer flex items-center justify-center text-border"
+        >
           x
         </button>
-        <div className="w-52 h-fit bg-coffee-bg absolute top-0 right-0 border-l border-b-2 border-box-border">
+        {isShow && (
+          <div className="fixed inset-0 z-0" onClick={() => setIsShow(false)} />
+        )}
+        <div
+          className={clsx(
+            " w-52 h-fit bg-coffee-bg absolute top-0 right-0 border-l border-b-2 border-box-border",
+            isShow ? "block" : "hidden",
+          )}
+        >
           <ul class=" items-center gap-8 text-text-header sm:flex">
             <li class=" cursor-pointer hover:bg-border py-2 pr-3 hover:text-coffee-bg transition duration-200 ease-in">
               فروشگاه
