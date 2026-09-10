@@ -410,7 +410,7 @@ function Category() {
   return (
     <>
       <div className="bg-[#775142] rounded-b-4xl py-4">
-        <div className=" w-fit mx-auto gap-8 grid grid-cols-2 sm:grid-cols-4 sm:gap-16">
+        <div className=" w-fit mx-auto gap-8 grid grid-cols-4 sm:gap-16">
           {categories.map((cat) => (
             <Boxcategory key={cat.id} {...cat} />
           ))}

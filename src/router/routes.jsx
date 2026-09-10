@@ -8,6 +8,7 @@ import SignUp from "../pages/SignUp";
 import Cart from "../pages/Cart";
 import ContactUs from "../pages/ContactUs";
 import Blog from "../pages/Blog";
+import About from "../pages/About";
 const route = createBrowserRouter([
   {
     path: "/",
@@ -20,6 +21,7 @@ const route = createBrowserRouter([
       { path: "cart", element: <Cart /> },
       { path: "contact-us", element: <ContactUs /> },
       { path: "blog", element: <Blog /> },
+      { path: "about", element: <About /> },
       {
         path: "/*",
         element: <Page404 />,

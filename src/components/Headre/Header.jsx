@@ -83,7 +83,12 @@ function Header() {
           >
             ارتباط با ما
           </li>
-          <li className=" cursor-pointer hover:text-border transition duration-200 ease-in">
+          <li
+            className=" cursor-pointer hover:text-border transition duration-200 ease-in"
+            onClick={() => {
+              x("about");
+            }}
+          >
             درباره ما
           </li>
           <li
