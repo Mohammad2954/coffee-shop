@@ -29,7 +29,7 @@ function Header() {
         >
           <ul class=" items-center gap-8 text-text-header sm:flex">
             <li class=" cursor-pointer hover:bg-border py-2 pr-3 hover:text-coffee-bg transition duration-200 ease-in">
-              فروشگاه
+              خانه
             </li>
             <li class=" cursor-pointer hover:bg-border py-2 pr-3 hover:text-coffee-bg transition duration-200 ease-in">
               پشتیبانی
@@ -70,7 +70,7 @@ function Header() {
 
         <ul className=" items-center gap-8 text-text-header hidden sm:flex">
           <li className=" cursor-pointer hover:text-border transition duration-200 ease-in">
-            فروشگاه
+            خانه
           </li>
           <li className=" cursor-pointer hover:text-border transition duration-200 ease-in">
             پشتیبانی
