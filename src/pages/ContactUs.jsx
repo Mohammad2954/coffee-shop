@@ -1,14 +1,15 @@
 import React from "react";
 import BreadCramb from "../components/BreadCramb/BreadCramb";
+import AddTitle from "../components/All/AddTitle";
 
 function ContactUs() {
   return (
     <div className="max-w-content mx-auto px-8">
       <div className="my-8">
         <BreadCramb />
-        <h2 className="text-2xl font-bold text-coffee mt-8 mr-4">
-          ارتباط با ما
-        </h2>
+        <div className="mt-8 mr-4">
+          <AddTitle title={"ارتباط با ما"} />
+        </div>
       </div>
       <div className="grid grid-cols-12 gap-4  ">
         <div className=" h-fit bg-[#FFE5BE] col-span-full sm:col-span-6 shadow-[0_0_40px_-5px_rgba(0,0,0,0.25)] p-4 rounded-3xl rounded-tr-none pb-6">

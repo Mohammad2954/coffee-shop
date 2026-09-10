@@ -1,0 +1,19 @@
+.style-title::after{
+ position: absolute;
+ content: "";
+ right: -1.5rem;
+ width: 1rem;
+ height: 1rem;
+ background-color: #775142;
+ top: 15%;
+}
+.style-title::before{
+    rotate: 45deg;
+     position: absolute;
+ content: "";
+ right: -1.5rem;
+ width: 1rem;
+ height: 1rem;
+ background-color:  #775142;
+ top: 15%;
+}
