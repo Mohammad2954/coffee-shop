@@ -9,6 +9,25 @@ function Header() {
         <button className="w-8 h-8 border border-border rounded-sm cursor-pointer flex items-center justify-center text-border">
           x
         </button>
+        <div className="w-52 h-fit bg-coffee-bg absolute top-0 right-0 border-l border-b-2 border-box-border">
+          <ul class=" items-center gap-8 text-text-header sm:flex">
+            <li class=" cursor-pointer hover:bg-border py-2 pr-3 hover:text-coffee-bg transition duration-200 ease-in">
+              فروشگاه
+            </li>
+            <li class=" cursor-pointer hover:bg-border py-2 pr-3 hover:text-coffee-bg transition duration-200 ease-in">
+              پشتیبانی
+            </li>
+            <li class=" cursor-pointer hover:bg-border py-2 pr-3 hover:text-coffee-bg transition duration-200 ease-in">
+              ارتباط با ما
+            </li>
+            <li class=" cursor-pointer hover:bg-border py-2 pr-3 hover:text-coffee-bg transition duration-200 ease-in">
+              درباره ما
+            </li>
+            <li class=" cursor-pointer hover:bg-border py-2 pr-3 hover:text-coffee-bg transition duration-200 ease-in">
+              بلاگ
+            </li>
+          </ul>
+        </div>
       </div>
       <div className="flex items-center lg:gap-12 gap-8 ml-4">
         <svg
