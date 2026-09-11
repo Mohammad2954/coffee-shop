@@ -9,19 +9,21 @@ import Cart from "../pages/Cart";
 import ContactUs from "../pages/ContactUs";
 import Blog from "../pages/Blog";
 import About from "../pages/About";
+import Product from "../components/Product/Product";
 const route = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout />,
     children: [
       { index: true, element: <Home /> },
-      { path: "category", element: <Category /> },
+      { path: "category/", element: <Category /> },
       { path: "login", element: <Login /> },
       { path: "signup", element: <SignUp /> },
       { path: "cart", element: <Cart /> },
       { path: "contact-us", element: <ContactUs /> },
       { path: "blog", element: <Blog /> },
       { path: "about", element: <About /> },
+      { path: "product/:elemnt", element: <Product /> },
       {
         path: "/*",
         element: <Page404 />,

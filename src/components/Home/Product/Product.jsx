@@ -2,7 +2,7 @@ import React from "react";
 
 function Product({ name, description, price, image }) {
   return (
-    <div className="bg-white shadow-[0_0_40px_-5px_rgba(0,0,0,0.25)] flex flex-col justify-between  border border-[#E2D9C8] rounded-lg p-4 mt-12">
+    <div className="bg-white shadow-[0_0_40px_-5px_rgba(0,0,0,0.25)] flex flex-col justify-between  border border-[#E2D9C8] rounded-lg p-4 ">
       <div>
         <div className=" relative">
           <img

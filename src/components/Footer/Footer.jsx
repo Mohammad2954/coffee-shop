@@ -2,7 +2,7 @@ import "./Footer.css";
 
 function Footer() {
   return (
-    <footer className=" relative   bg-coffee-bg border-box-border border-t-2 mt-12 rounded-t-[4rem]">
+    <footer className=" relative   bg-coffee-bg border-box-border border-t-2 mt-12 ">
       {/* <img src="/img/Footer/bg.jpg"
         className=" absolute inset-0 w-full h-96 z-0"
         alt=""/>
@@ -83,13 +83,13 @@ function Footer() {
               </ul>
             </div>
             <div className="   flex-col gap-2 hidden sm:flex">
-              <h5>دسترسی سریع</h5>
+              <h5>پیشنهاد ما</h5>
               <ul className=" list-disc mr-[12px]">
-                <li>قهوه</li>
-                <li>قهوه</li>
-                <li>قهوه</li>
-                <li>قهوه</li>
-                <li>قهوه</li>
+                <li>امریکانو</li>
+                <li>لاته</li>
+                <li>اسپرسو</li>
+                <li>هات چاکلت</li>
+                <li>کاپوچینو </li>
               </ul>
             </div>
             <div className="  flex-col gap-2 hidden sm:flex">
@@ -97,18 +97,15 @@ function Footer() {
               <ul className="list-disc mr-[12px]">
                 <li>درباره ما</li>
                 <li>پشتیبانی ارتباط با ما</li>
-                <li>قوانین و مقررات</li>
-                <li>پشتیبانی</li>
               </ul>
             </div>
           </div>
           <div className="col-span-full mt-4 sm:block hidden">
             <ul className="list-disc">
               <li className="text-text-header relative z-10 text-sm  ">
-                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-                استفاده از طراحان گرافیک است چاپگرها ربردی می باشد کتابهای زیادی
-                در شصت و سه درصد گذشته حال و آینده شناخت فراوان جامعه و متخصصان
-                را می طلبد
+                {" "}
+                در قهوه تلخ، شما فقط قهوه نمی‌نوشید؛ بلکه در حال تجربه کردن هنر،
+                عطر، طعم و یک لحظه ناب از زندگی هستید.
               </li>
             </ul>
           </div>

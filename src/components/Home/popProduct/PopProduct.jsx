@@ -6,7 +6,7 @@ function PopProduct() {
     <div className=" relative">
       <div className="max-w-content mx-auto px-8 mt-16 z-10 relative">
         <AddTitle title={"محبوب ترین ها"} />
-        <div className="grid  grid-cols- lg:grid-cols-5 sm:grid-cols-3 gap-4 mt-[-1rem]">
+        <div className="grid  grid-cols- lg:grid-cols-5 sm:grid-cols-3 gap-4 mt-4">
           {data.slice(0, 5).map((pro) => {
             return <Product {...pro} key={pro.id} border={false} />;
           })}
