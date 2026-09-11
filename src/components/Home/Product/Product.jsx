@@ -6,9 +6,12 @@ function Product({ name, description, price, image }) {
       <div>
         <div className=" relative">
           <img
-            src="/img/pro/image.jpg"
-            className="w-full  min-h-44 rounded-lg"
+            src={image}
+            className="w-full  sm:h-[13rem] rounded-lg"
             alt=""
+            onError={(e) => {
+              e.target.src = "https://placehold.co/400x300?text=No+Image";
+            }}
           />
           <svg
             className="absolute top-1 right-1 w-6 h-6 text-white"
@@ -26,11 +29,11 @@ function Product({ name, description, price, image }) {
           </svg>
         </div>
         <div className="mt-4">
-          <h3 className="font-bold text-xl text-coffee">{name}</h3>
-          <p className="text-[12px] mt-1">{description}</p>
+          <h3 className="font-bold text-xl text-coffee line-clamp-1">{name}</h3>
+          <p className="text-[12px] mt-1 line-clamp-2">{description}</p>
         </div>
       </div>
-      <div className="flex items-center justify-between mt-1">
+      <div className="flex items-center justify-between mt-3">
         <span className="font-bold">{price.toLocaleString()}</span>
         <button className="bg-coffee-bg  text-white text-[13px] py-1 px-4 rounded-sm">
           سفارش

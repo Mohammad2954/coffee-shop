@@ -1,13 +1,13 @@
 import AddTitle from "../../All/AddTitle.jsx";
 import { data } from "../../data.js";
 import Product from "../Product/Product.jsx";
-function PopProduct() {
+function PopProduct({ popProducts }) {
   return (
     <div className=" relative">
       <div className="max-w-content mx-auto px-8 mt-16 z-10 relative">
         <AddTitle title={"محبوب ترین ها"} />
         <div className="grid  grid-cols- lg:grid-cols-5 sm:grid-cols-3 gap-4 mt-4">
-          {data.slice(0, 5).map((pro) => {
+          {popProducts.map((pro) => {
             return <Product {...pro} key={pro.id} border={false} />;
           })}
         </div>
