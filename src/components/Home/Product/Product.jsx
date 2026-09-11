@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router";
 
 function Product({ name, description, price, image }) {
+  const x = useNavigate();
   return (
     <div className="bg-white shadow-[0_0_40px_-5px_rgba(0,0,0,0.25)] flex flex-col justify-between  border border-[#E2D9C8] rounded-lg p-4 ">
       <div>
@@ -29,7 +31,14 @@ function Product({ name, description, price, image }) {
           </svg>
         </div>
         <div className="mt-4">
-          <h3 className="font-bold text-xl text-coffee line-clamp-1">{name}</h3>
+          <h3
+            className="font-bold text-xl text-coffee line-clamp-1 cursor-pointer"
+            onClick={() => {
+              x(`product/${name}`);
+            }}
+          >
+            {name}
+          </h3>
           <p className="text-[12px] mt-1 line-clamp-2">{description}</p>
         </div>
       </div>

@@ -9,7 +9,7 @@ import Cart from "../pages/Cart";
 import ContactUs from "../pages/ContactUs";
 import Blog from "../pages/Blog";
 import About from "../pages/About";
-import Product from "../components/Product/Product";
+import ProductPage from "../pages/ProductPage";
 const route = createBrowserRouter([
   {
     path: "/",
@@ -23,7 +23,7 @@ const route = createBrowserRouter([
       { path: "contact-us", element: <ContactUs /> },
       { path: "blog", element: <Blog /> },
       { path: "about", element: <About /> },
-      { path: "product/:elemnt", element: <Product /> },
+      { path: "product/:elemnt", element: <ProductPage /> },
       {
         path: "/*",
         element: <Page404 />,
