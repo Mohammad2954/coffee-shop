@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import AddProducts from "../Cart/AddProducts";
 import { useLocation, useParams } from "react-router";
 import { useGetProducts } from "../hooks/useGetProducts";
 import { API_URL } from "../constants/api.js";
+
+import "./active.css";
+import clsx from "clsx";
 
 function Product() {
   const x = useParams();
@@ -13,7 +16,9 @@ function Product() {
   const { name, story, image, ingredients, size } = menu.categories
     .flatMap((e) => e.items)
     .filter((e) => e.name === x.elemnt)[0];
-
+  const [sm, setSm] = useState(false);
+  const [lg, setLg] = useState(true);
+  const [xl, setXl] = useState(false);
   return (
     <div className="max-w-content mx-auto px-8">
       <div className="grid grid-cols-12 gap-6 mt-20">
@@ -43,13 +48,44 @@ function Product() {
             <div>
               <span>سایز :</span>
               <div className="flex items-center gap-2 mt-3 flex-wrap">
-                <div className="border border-box-border py-1 px-3 text-sm rounded-xl cursor-pointer hover:bg-coffee-bg hover:text-text-header transition duration-300 flex items-center justify-center ">
+                <div
+                  className={clsx(
+                    "border border-box-border py-1 px-3 text-sm rounded-xl cursor-pointer hover:bg-coffee-bg hover:text-text-header transition duration-300 flex items-center justify-center ",
+                    xl && "active",
+                  )}
+                  onClick={() => {
+                    setXl(!xl);
+                    setSm(false);
+                    setLg(false);
+                  }}
+                >
                   بزرگ
                 </div>
-                <div className="border border-box-border py-1 px-3 text-sm rounded-xl cursor-pointer hover:bg-coffee-bg hover:text-text-header transition duration-300 flex items-center justify-center">
+                <div
+                  className={clsx(
+                    "border border-box-border py-1 px-3 text-sm rounded-xl cursor-pointer hover:bg-coffee-bg hover:text-text-header transition duration-300 flex items-center justify-center ",
+                    lg && "active",
+                  )}
+                  onClick={() => {
+                    setLg(!lg);
+                    setSm(false);
+                    setXl(false);
+                  }}
+                >
                   متوسط
                 </div>
-                <div className="border border-box-border py-1 px-3 text-sm rounded-xl cursor-pointer hover:bg-coffee-bg hover:text-text-header transition duration-300 flex items-center justify-center">
+                <div
+                  className={clsx(
+                    "border border-box-border py-1 px-3 text-sm rounded-xl cursor-pointer hover:bg-coffee-bg hover:text-text-header transition duration-300 flex items-center justify-center ",
+                    sm && "active",
+                  )}
+                  onClick={() => {
+                    setSm(!sm);
+
+                    setLg(false);
+                    setXl(false);
+                  }}
+                >
                   کوچک
                 </div>
               </div>
@@ -57,7 +93,16 @@ function Product() {
             <div className="mt-8 w-full border border-box-border rounded-lg flex items-center justify-between px-3">
               <span>قیمت :</span>
               <div className="flex items-center">
-                <span>{size.lg.toLocaleString()}</span>
+                <span>
+                  {(sm
+                    ? size.sm
+                    : lg
+                      ? size.lg
+                      : xl
+                        ? size.xl
+                        : 0
+                  ).toLocaleString()}
+                </span>
                 <p className="text-[10px] rotate-90 py-4">تومان</p>
               </div>
             </div>
