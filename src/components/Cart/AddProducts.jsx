@@ -4,7 +4,7 @@ function AddProducts() {
   return (
     <div className="flex items-center">
       <div className="flex items-center gap-3 ">
-        <div className=" flex items-center justify-center border border-coffee-bg w-8 h-8 rounded-full">
+        <div className=" flex items-center justify-center border text-white border-coffee-bg w-8 h-8 bg-coffee-bg rounded-lg cursor-pointer">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -21,7 +21,7 @@ function AddProducts() {
           </svg>
         </div>
         <span>1</span>
-        <div className="flex items-center justify-center border border-coffee-bg w-8 h-8 rounded-full">
+        <div className="flex items-center justify-center border text-white border-coffee-bg w-8 h-8 bg-coffee-bg rounded-lg cursor-pointer">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
