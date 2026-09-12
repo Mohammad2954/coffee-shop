@@ -1,10 +1,23 @@
 import BreadCramb from "../components/BreadCramb/BreadCramb";
 import Sidebar from "../components/Category/Sidebar";
 import Sorted from "../components/Category/Sorted";
-import { data } from "../components/data";
 import Product from "../components/Home/Product/Product";
 import Paigination from "../components/Paigination/Paigination";
+import { useGetProducts } from "../components/hooks/useGetProducts.jsx";
+import { API_URL } from "../components/constants/api.js";
+import LoaderSpinner from "../components/LoaderSpiner/LoaderSpinner.jsx";
+import { useNavigate } from "react-router";
+
 function Category() {
+  const { data: menu, isLoading, error } = useGetProducts({ url: API_URL });
+
+  if (isLoading) return <LoaderSpinner />;
+  if (error) return <div>خطا: {error.message}</div>;
+  const result = menu.categories
+    .flatMap((e) => e.items)
+    .filter((e) => e.is_popular === true);
+  console.log(result);
+
   return (
     <div className=" mx-auto mt-20 px-8">
       <BreadCramb />
@@ -69,7 +82,7 @@ function Category() {
           <Sidebar />
         </div>
         <div className="col-span-4 sm:col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {data.map((event) => (
+          {result.map((event) => (
             <Product {...event} key={event.id} border={true} />
           ))}
         </div>

@@ -69,7 +69,12 @@ function Header() {
         </svg>
 
         <ul className=" items-center gap-8 text-text-header hidden sm:flex">
-          <li className=" cursor-pointer hover:text-border transition duration-200 ease-in">
+          <li
+            onClick={() => {
+              x("/");
+            }}
+            className=" cursor-pointer hover:text-border transition duration-200 ease-in"
+          >
             خانه
           </li>
           <li className=" cursor-pointer hover:text-border transition duration-200 ease-in">

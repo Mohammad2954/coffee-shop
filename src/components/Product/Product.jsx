@@ -30,8 +30,22 @@ function Product() {
       <div className="grid grid-cols-12 gap-6 mt-20">
         <div className="w-full col-span-full sm:col-span-8 p-4 shadow-[0_0_40px_-5px_rgba(0,0,0,0.25)]  rounded-lg ">
           <div className="flex  justify-between gap-4 flex-col lg:flex-row ">
-            <div>
+            <div className=" relative">
               <img src={image} alt="" className=" rounded-lg" />
+              <svg
+                class="absolute top-1 right-1 w-6 h-6 text-white"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                ></path>
+              </svg>
             </div>
             <div>
               <div>
