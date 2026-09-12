@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AddProducts from "../Cart/AddProducts";
 import { useLocation, useParams } from "react-router";
 import { useGetProducts } from "../hooks/useGetProducts";
@@ -16,9 +16,12 @@ function Product() {
   const { name, story, image, ingredients, size } = menu.categories
     .flatMap((e) => e.items)
     .filter((e) => e.name === x.elemnt)[0];
-  const [sm, setSm] = useState(false);
-  const [lg, setLg] = useState(true);
-  const [xl, setXl] = useState(false);
+  const [sizePro, setSizePro] = useState("lg");
+  const [totalPrice, setTotalPrice] = useState(0);
+  useEffect(() => {
+    setTotalPrice(size[sizePro]);
+  }, [sizePro]);
+
   return (
     <div className="max-w-content mx-auto px-8">
       <div className="grid grid-cols-12 gap-6 mt-20">
@@ -51,12 +54,10 @@ function Product() {
                 <div
                   className={clsx(
                     "border border-box-border py-1 px-3 text-sm rounded-xl cursor-pointer hover:bg-coffee-bg hover:text-text-header transition duration-300 flex items-center justify-center ",
-                    xl && "active",
+                    // xl && "active",
                   )}
                   onClick={() => {
-                    setXl(!xl);
-                    setSm(false);
-                    setLg(false);
+                    setSizePro("xl");
                   }}
                 >
                   بزرگ
@@ -64,12 +65,10 @@ function Product() {
                 <div
                   className={clsx(
                     "border border-box-border py-1 px-3 text-sm rounded-xl cursor-pointer hover:bg-coffee-bg hover:text-text-header transition duration-300 flex items-center justify-center ",
-                    lg && "active",
+                    // lg && "active",
                   )}
                   onClick={() => {
-                    setLg(!lg);
-                    setSm(false);
-                    setXl(false);
+                    setSizePro("lg");
                   }}
                 >
                   متوسط
@@ -77,13 +76,10 @@ function Product() {
                 <div
                   className={clsx(
                     "border border-box-border py-1 px-3 text-sm rounded-xl cursor-pointer hover:bg-coffee-bg hover:text-text-header transition duration-300 flex items-center justify-center ",
-                    sm && "active",
+                    // sm && "active",
                   )}
                   onClick={() => {
-                    setSm(!sm);
-
-                    setLg(false);
-                    setXl(false);
+                    setSizePro("sm");
                   }}
                 >
                   کوچک
@@ -93,16 +89,7 @@ function Product() {
             <div className="mt-8 w-full border border-box-border rounded-lg flex items-center justify-between px-3">
               <span>قیمت :</span>
               <div className="flex items-center">
-                <span>
-                  {(sm
-                    ? size.sm
-                    : lg
-                      ? size.lg
-                      : xl
-                        ? size.xl
-                        : 0
-                  ).toLocaleString()}
-                </span>
+                <span>{totalPrice.toLocaleString()}</span>
                 <p className="text-[10px] rotate-90 py-4">تومان</p>
               </div>
             </div>

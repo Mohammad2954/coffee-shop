@@ -1,10 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 
 function AddProducts() {
+  const [count, setCount] = useState(1);
+  const increas = () => {
+    if (count < 10) {
+      setCount(count + 1);
+    }
+  };
+  const decrise = () => {
+    if (count > 1) {
+      setCount(count - 1);
+    }
+  };
   return (
     <div className="flex items-center">
       <div className="flex items-center gap-3 ">
-        <div className=" flex items-center justify-center border text-white border-coffee-bg w-8 h-8 bg-coffee-bg rounded-lg cursor-pointer">
+        <div
+          onClick={() => {
+            increas();
+          }}
+          className=" flex items-center justify-center border text-white border-coffee-bg w-8 h-8 bg-coffee-bg rounded-lg cursor-pointer"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -20,8 +36,13 @@ function AddProducts() {
             />
           </svg>
         </div>
-        <span>1</span>
-        <div className="flex items-center justify-center border text-white border-coffee-bg w-8 h-8 bg-coffee-bg rounded-lg cursor-pointer">
+        <span>{count}</span>
+        <div
+          onClick={() => {
+            decrise();
+          }}
+          className="flex items-center justify-center border text-white border-coffee-bg w-8 h-8 bg-coffee-bg rounded-lg cursor-pointer"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
