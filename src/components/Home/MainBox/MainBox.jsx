@@ -1,7 +1,7 @@
 function MainBox() {
   return (
     <div className="max-w-content mx-auto px-8">
-      <div className="py-8 bg-coffee-bg px-8 flex items-center justify-between rounded-xl mt-20">
+      <div className="py-8 bg-coffee-bg px-8 flex items-center justify-between rounded-xl mt-[1rem]">
         <div className="text-center sm:text-start">
           <h3 className="mb-5 text-2xl lg:text-4xl font-bold text-[#805D47] text-shadow-lg">
             انواع قهوه فوری

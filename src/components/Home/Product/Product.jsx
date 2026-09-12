@@ -5,12 +5,12 @@ function Product({ name, description, price, image }) {
   const x = useNavigate();
 
   return (
-    <div className="bg-white shadow-[0_0_40px_-5px_rgba(0,0,0,0.25)] flex flex-col justify-between  border border-[#E2D9C8] rounded-lg p-4 ">
+    <div className="bg-white h-[365px] flex flex-col justify-between  border border-[#E2D9C8] rounded-lg p-4 ">
       <div>
         <div className=" relative">
           <img
             src={image}
-            className="w-full  sm:h-[13rem] rounded-lg"
+            className="h-[13rem] w-full rounded-lg"
             alt=""
             onError={(e) => {
               e.target.src = "https://placehold.co/400x300?text=No+Image";

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import AddProducts from "../Cart/AddProducts";
-import { useLocation, useParams } from "react-router";
+import { useLocation, useMatch, useMatches, useParams } from "react-router";
 import { useGetProducts } from "../hooks/useGetProducts";
 import { API_URL } from "../constants/api.js";
 

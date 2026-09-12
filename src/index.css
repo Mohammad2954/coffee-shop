@@ -74,3 +74,44 @@ body{
 @keyframes l19 { 
   100%{transform: rotate(1turn)}
 }
+
+
+/* /// */
+/* ==========================================
+   استایل دکمه‌های بعدی و قبلی (Navigation)
+   ========================================== */
+.custom-swiper .swiper-button-next,
+.custom-swiper .swiper-button-prev {
+  @apply bg-coffee-bg text-text-header w-8 h-8 rounded-lg p-2  transition-all duration-300 hover:bg-text-header  hover:text-coffee-bg;
+}
+
+/* استایل فلش‌های داخل دکمه‌ها */
+.custom-swiper .swiper-button-next:after,
+.custom-swiper .swiper-button-prev:after {
+  @apply text-lg font-bold;
+}
+
+/* ==========================================
+   استایل نقاط پایین (Pagination)
+   ========================================== */
+/* حالت عادی نقاط */
+.custom-swiper .swiper-pagination-bullet {
+  @apply bg-gray-300 w-2.5 h-2.5 opacity-100 transition-all duration-300 ;
+  
+}
+
+/* حالت فعال (اسلاید جاری) */
+.custom-swiper .swiper-pagination-bullet-active {
+  @apply bg-coffee w-3 h-3; /* رنگ و سایز نقطه فعال */
+}
+
+/* ==========================================
+   ریسپانسیو (مخفی کردن دکمه‌ها در موبایل)
+   ========================================== */
+/* در صفحات کوچک‌تر از 768px دکمه‌ها مخفی شوند تا روی محتوا نیفتند */
+@media (max-width: 768px) {
+  .custom-swiper .swiper-button-next,
+  .custom-swiper .swiper-button-prev {
+    @apply hidden;
+  }
+}
