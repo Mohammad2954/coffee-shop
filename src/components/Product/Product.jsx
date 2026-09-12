@@ -22,8 +22,7 @@ function Product() {
   const [totalPrice, setTotalPrice] = useState(0);
   useEffect(() => {
     setTotalPrice(size[sizePro] * count);
-    console.log(count);
-  }, [count]);
+  }, [sizePro, count]);
 
   return (
     <div className="max-w-content mx-auto px-8">
