@@ -1,21 +1,12 @@
 import React, { useEffect, useState } from "react";
 import AddProducts from "../Cart/AddProducts";
-import { useLocation, useMatch, useMatches, useParams } from "react-router";
-import { useGetProducts } from "../hooks/useGetProducts";
-import { API_URL } from "../constants/api.js";
-
+import { useParams } from "react-router";
 import "./active.css";
 import clsx from "clsx";
-import LoaderSpinner from "../LoaderSpiner/LoaderSpinner.jsx";
 
-function Product() {
+function Product({ menu }) {
   const [count, setCount] = useState(1);
   const x = useParams();
-  const { data: menu, isLoading, error } = useGetProducts({ url: API_URL });
-
-  if (isLoading) return <LoaderSpinner />;
-  if (error) return <div>خطا: {error.message}</div>;
-
   const { name, story, image, ingredients, size } = menu.categories
     .flatMap((e) => e.items)
     .filter((e) => e.name === x.elemnt)[0];
@@ -31,7 +22,7 @@ function Product() {
         <div className="w-full col-span-full sm:col-span-8 p-4 shadow-[0_0_40px_-5px_rgba(0,0,0,0.25)]  rounded-lg ">
           <div className="flex  justify-between gap-4 flex-col lg:flex-row ">
             <div className=" relative">
-              <img src={image} alt="" className=" rounded-lg" />
+              <img src={image} alt="" className=" w-full rounded-lg" />
               <svg
                 class="absolute top-1 right-1 w-6 h-6 text-white"
                 xmlns="http://www.w3.org/2000/svg"
