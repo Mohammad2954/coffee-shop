@@ -6,13 +6,14 @@ import { API_URL } from "../constants/api.js";
 
 import "./active.css";
 import clsx from "clsx";
+import LoaderSpinner from "../LoaderSpiner/LoaderSpinner.jsx";
 
 function Product() {
   const [count, setCount] = useState(1);
   const x = useParams();
   const { data: menu, isLoading, error } = useGetProducts({ url: API_URL });
 
-  if (isLoading) return <div>در حال بارگذاری...</div>;
+  if (isLoading) return <LoaderSpinner />;
   if (error) return <div>خطا: {error.message}</div>;
 
   const { name, story, image, ingredients, size } = menu.categories

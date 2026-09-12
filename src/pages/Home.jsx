@@ -6,11 +6,12 @@ import Comment from "../components/Home/comment/Comment";
 import Mainheader from "../components/Headre/Mainheader";
 import { useGetProducts } from "../components/hooks/useGetProducts";
 import { API_URL } from "../components/constants/api.js";
+import LoaderSpinner from "../components/LoaderSpiner/LoaderSpinner.jsx";
 
 function Home() {
   const { data: menu, isLoading, error } = useGetProducts({ url: API_URL });
 
-  if (isLoading) return <div>در حال بارگذاری...</div>;
+  if (isLoading) return <LoaderSpinner />;
   if (error) return <div>خطا: {error.message}</div>;
 
   const sell = menu.categories
