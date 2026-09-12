@@ -8,19 +8,22 @@ import "./active.css";
 import clsx from "clsx";
 
 function Product() {
+  const [count, setCount] = useState(1);
   const x = useParams();
   const { data: menu, isLoading, error } = useGetProducts({ url: API_URL });
 
   if (isLoading) return <div>در حال بارگذاری...</div>;
   if (error) return <div>خطا: {error.message}</div>;
+
   const { name, story, image, ingredients, size } = menu.categories
     .flatMap((e) => e.items)
     .filter((e) => e.name === x.elemnt)[0];
   const [sizePro, setSizePro] = useState("lg");
   const [totalPrice, setTotalPrice] = useState(0);
   useEffect(() => {
-    setTotalPrice(size[sizePro]);
-  }, [sizePro]);
+    setTotalPrice(size[sizePro] * count);
+    console.log(count);
+  }, [count]);
 
   return (
     <div className="max-w-content mx-auto px-8">
@@ -54,7 +57,7 @@ function Product() {
                 <div
                   className={clsx(
                     "border border-box-border py-1 px-3 text-sm rounded-xl cursor-pointer hover:bg-coffee-bg hover:text-text-header transition duration-300 flex items-center justify-center ",
-                    // xl && "active",
+                    sizePro === "xl" && "active",
                   )}
                   onClick={() => {
                     setSizePro("xl");
@@ -65,7 +68,7 @@ function Product() {
                 <div
                   className={clsx(
                     "border border-box-border py-1 px-3 text-sm rounded-xl cursor-pointer hover:bg-coffee-bg hover:text-text-header transition duration-300 flex items-center justify-center ",
-                    // lg && "active",
+                    sizePro === "lg" && "active",
                   )}
                   onClick={() => {
                     setSizePro("lg");
@@ -76,7 +79,7 @@ function Product() {
                 <div
                   className={clsx(
                     "border border-box-border py-1 px-3 text-sm rounded-xl cursor-pointer hover:bg-coffee-bg hover:text-text-header transition duration-300 flex items-center justify-center ",
-                    // sm && "active",
+                    sizePro === "sm" && "active",
                   )}
                   onClick={() => {
                     setSizePro("sm");
@@ -94,7 +97,7 @@ function Product() {
               </div>
             </div>
             <div className="flex items-center justify-between flex-wrap gap-4 mt-4">
-              <AddProducts />
+              <AddProducts count={count} setCount={setCount} />
               <div className="cursor-pointer bg-coffee-bg text-sm text-text-header rounded-lg px-3 py-2">
                 افزودن به سبد خرید
               </div>

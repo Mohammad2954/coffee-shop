@@ -18,6 +18,12 @@ const queryClient = new QueryClient({
 createRoot(document.getElementById("root")).render(
   <QueryClientProvider client={queryClient}>
     <App />
-    <Toaster position="top-left" reverseOrder={false} />
+    <Toaster
+      position="top-left"
+      reverseOrder={false}
+      containerStyle={{
+        direction: "ltr",
+      }}
+    />
   </QueryClientProvider>,
 );

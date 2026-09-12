@@ -1,15 +1,19 @@
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 
-function AddProducts() {
-  const [count, setCount] = useState(1);
+function AddProducts({ count, setCount }) {
   const increas = () => {
     if (count < 10) {
       setCount(count + 1);
+    } else {
+      toast.error("بیشتر از حد مجاز");
     }
   };
   const decrise = () => {
     if (count > 1) {
       setCount(count - 1);
+    } else {
+      toast.error("کمتر از حد مجاز");
     }
   };
   return (
