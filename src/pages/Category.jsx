@@ -16,7 +16,6 @@ function Category() {
   const result = menu.categories
     .flatMap((e) => e.items)
     .filter((e) => e.is_popular === true);
-  console.log(result);
 
   return (
     <div className=" mx-auto mt-20 px-8">
@@ -81,7 +80,7 @@ function Category() {
         <div className="hidden sm:block">
           <Sidebar />
         </div>
-        <div className="col-span-4 sm:col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="col-span-4 sm:col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
           {result.map((event) => (
             <Product {...event} key={event.id} border={true} />
           ))}

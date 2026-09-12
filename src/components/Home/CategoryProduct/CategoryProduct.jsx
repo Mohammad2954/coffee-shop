@@ -407,6 +407,7 @@ function Category() {
       ),
     },
   ];
+
   return (
     <>
       <div className="bg-[#775142] rounded-b-4xl py-4">

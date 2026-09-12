@@ -16,7 +16,7 @@ const route = createBrowserRouter([
     element: <RootLayout />,
     children: [
       { index: true, element: <Home /> },
-      { path: "category/", element: <Category /> },
+      { path: "category/:category-name?", element: <Category /> },
       { path: "login", element: <Login /> },
       { path: "signup", element: <SignUp /> },
       { path: "cart", element: <Cart /> },
