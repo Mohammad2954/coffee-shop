@@ -1,15 +1,35 @@
+import { useEffect, useReducer, useState } from "react";
 import { useCartStor } from "../../store/useCartStor";
 import AddProducts from "./AddProducts";
 
-function CartProduct({ name, image, price, sizePro, id }) {
+function CartProduct({ name, image, price, sizePro, id, count }) {
   const deletItem = useCartStor((state) => state.deletItem);
+  const reduser = (state, action) => {
+    switch (action.type) {
+      case "count":
+        return {
+          ...state,
+          count: action.payload,
+          totalPrice: action.payload * state.findPric,
+        };
+
+      default:
+        return { ...state };
+    }
+  };
+  const [proInfo, dispatch] = useReducer(reduser, {
+    count: count,
+    findPric: price / count,
+    totalPrice: count * price,
+  });
+
   return (
     <div className=" relative border border-coffee-bg  rounded-2xl mb-3 flex sm:items-center sm:justify-between flex-col sm:flex-row">
       <div className="flex items-center justify-between gap-4 flex-col sm:flex-row">
         <img
           src={image}
           alt=""
-          className="sm:w-32 w-full h-[128px] rounded-t-2xl sm:rounded-l-none sm:rounded-r-2xl"
+          className="sm:w-32 w-full h-[21rem] sm:h-[128px] rounded-t-2xl sm:rounded-l-none sm:rounded-r-2xl"
         />
         <h3 className=" text-coffee font-bold text-2xl">{name}</h3>
         <div className=" absolute top-2 right-4 bg-coffee-bg text-[10px] text-text-header rounded-full py-1 px-2">
@@ -18,10 +38,10 @@ function CartProduct({ name, image, price, sizePro, id }) {
       </div>
       <div className="flex items-center  relative sm:mb-0 mb-3 ">
         <div className="flex items-center gap-4 mr-8 ml-52">
-          <AddProducts />
+          <AddProducts dataPro={proInfo} dispatch={dispatch} />
           <span className=" absolute left-16 flex gap-3 flex-row-reverse">
             <p className="text-sm">تومان</p>
-            {price}
+            {proInfo.totalPrice.toLocaleString()}
           </span>
         </div>
       </div>

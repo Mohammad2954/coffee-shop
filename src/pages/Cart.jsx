@@ -4,8 +4,6 @@ import { useCartStor } from "../store/useCartStor";
 
 function Cart() {
   const allItem = useCartStor((state) => state.item);
-  console.log(allItem);
-
   return (
     <div className="mt-20 max-w-content mx-auto px-8">
       <div>

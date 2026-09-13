@@ -21,6 +21,7 @@ export const useCartStor=create(persist((set)=>({
     }),
     delCart:()=>set({item:[]}),
     deletItem:(idElem,sizeElem)=>set((state)=>{
+        toast.success("محصول مورد نظر با موفقیت حذف شد")
         return {item: state.item.filter((e)=>!(e.id===idElem && e.sizePro===sizeElem))}
     })
 }
