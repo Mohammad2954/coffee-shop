@@ -1,7 +1,11 @@
 import BreadCramb from "../components/BreadCramb/BreadCramb";
 import CartProduct from "../components/Cart/CartProduct";
+import { useCartStor } from "../store/useCartStor";
 
 function Cart() {
+  const allItem = useCartStor((state) => state.item);
+  console.log(allItem);
+
   return (
     <div className="mt-20 max-w-content mx-auto px-8">
       <div>
@@ -9,7 +13,9 @@ function Cart() {
       </div>
       <div className="grid grid-cols-12 gap-6">
         <div className="col-span-full lg:col-span-7   ">
-          <CartProduct />
+          {allItem.map((e) => {
+            return <CartProduct key={e.id + e.sizePro} {...e} />;
+          })}
         </div>
         <div className="col-span-full lg:col-span-5 border rounded-lg ">
           <div className="p-4">

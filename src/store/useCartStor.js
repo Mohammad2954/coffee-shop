@@ -12,7 +12,6 @@ export const useCartStor=create(persist((set)=>({
             return {item:[...state.item,pro]}
             
         }else{
-            
             toast.error("در سبد خرید موجود است ")
             return {item:[...state.item]}
             
@@ -20,7 +19,10 @@ export const useCartStor=create(persist((set)=>({
         
 
     }),
-    delCart:()=>set({item:[]})
+    delCart:()=>set({item:[]}),
+    deletItem:(idElem,sizeElem)=>set((state)=>{
+        return {item: state.item.filter((e)=>!(e.id===idElem && e.sizePro===sizeElem))}
+    })
 }
 )
 )

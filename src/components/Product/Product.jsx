@@ -7,9 +7,10 @@ import { useCartStor } from "../../store/useCartStor";
 
 function Product({ menu }) {
   const x = useParams();
-  const { id, name, story, image, ingredients, size } = menu.categories
-    .flatMap((e) => e.items)
-    .filter((e) => e.name === x.elemnt)[0];
+  const { id, name, story, image, ingredients, size, description } =
+    menu.categories
+      .flatMap((e) => e.items)
+      .filter((e) => e.name === x.elemnt)[0];
   const reduser = (dataPro, action) => {
     switch (action.type) {
       case "SizePro":
@@ -36,7 +37,7 @@ function Product({ menu }) {
     totalPrice: 1 * size["lg"],
   });
   const addCartStor = useCartStor((state) => state.addCart);
-
+  const delCart = useCartStor((state) => state.delCart);
   const handleaddCart = () => {
     const pro = {
       id,
@@ -46,6 +47,7 @@ function Product({ menu }) {
       count: dataPro ? dataPro.count : 1,
       sizePro: dataPro ? dataPro.sizePro : "lg",
       price: dataPro ? dataPro.totalPrice : 1 * size["lg"],
+      description,
     };
     addCartStor(pro);
   };
