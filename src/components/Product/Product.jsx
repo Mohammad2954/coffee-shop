@@ -36,7 +36,11 @@ function Product({ menu }) {
     sizePro: "lg",
     totalPrice: 1 * size["lg"],
   });
+
   const addCartStor = useCartStor((state) => state.addCart);
+  const increaseDate = useCartStor((state) => state.increaseDate);
+  const decriseData = useCartStor((state) => state.decriseData);
+
   const delCart = useCartStor((state) => state.delCart);
   const handleaddCart = () => {
     const pro = {
@@ -48,6 +52,7 @@ function Product({ menu }) {
       sizePro: dataPro ? dataPro.sizePro : "lg",
       price: dataPro ? dataPro.totalPrice : 1 * size["lg"],
       description,
+      formol: size[dataPro.sizePro],
     };
     addCartStor(pro);
   };

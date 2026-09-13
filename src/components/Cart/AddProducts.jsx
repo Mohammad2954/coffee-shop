@@ -1,7 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import { useCartStor } from "../../store/useCartStor";
 
-function AddProducts({ dataPro, dispatch }) {
+function AddProducts({ dataPro, dispatch, id, sizePro }) {
+  const increaseDate = useCartStor((state) => state.increaseDate);
+  const decriseData = useCartStor((state) => state.decriseData);
+  const coutElem = useCartStor((state) => state.coutElem);
+  // console.log(coutElem(id, sizePro));
+
   const increas = () => {
     if (dataPro.count < 10) {
       dispatch({ type: "count", payload: dataPro.count + 1 });
@@ -21,7 +27,11 @@ function AddProducts({ dataPro, dispatch }) {
       <div className="flex items-center gap-3 ">
         <div
           onClick={() => {
-            increas();
+            if (id) {
+              increaseDate(id, sizePro);
+            } else {
+              increas();
+            }
           }}
           className=" flex items-center justify-center border text-white border-coffee-bg w-8 h-8 bg-coffee-bg rounded-lg cursor-pointer"
         >
@@ -40,10 +50,14 @@ function AddProducts({ dataPro, dispatch }) {
             />
           </svg>
         </div>
-        <span>{dataPro?.count}</span>
+        <span>{id ? coutElem(id, sizePro) : dataPro?.count}</span>
         <div
           onClick={() => {
-            decrise();
+            if (id) {
+              decriseData(id, sizePro);
+            } else {
+              decrise();
+            }
           }}
           className="flex items-center justify-center border text-white border-coffee-bg w-8 h-8 bg-coffee-bg rounded-lg cursor-pointer"
         >

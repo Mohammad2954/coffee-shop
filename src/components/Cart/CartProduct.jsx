@@ -2,27 +2,8 @@ import { useEffect, useReducer, useState } from "react";
 import { useCartStor } from "../../store/useCartStor";
 import AddProducts from "./AddProducts";
 
-function CartProduct({ name, image, price, sizePro, id, count }) {
+function CartProduct({ name, image, price, sizePro, id }) {
   const deletItem = useCartStor((state) => state.deletItem);
-  const reduser = (state, action) => {
-    switch (action.type) {
-      case "count":
-        return {
-          ...state,
-          count: action.payload,
-          totalPrice: action.payload * state.findPric,
-        };
-
-      default:
-        return { ...state };
-    }
-  };
-  const [proInfo, dispatch] = useReducer(reduser, {
-    count: count,
-    findPric: price / count,
-    totalPrice: count * price,
-  });
-
   return (
     <div className=" relative border border-coffee-bg  rounded-2xl mb-3 flex sm:items-center sm:justify-between flex-col sm:flex-row">
       <div className="flex items-center justify-between gap-4 flex-col sm:flex-row">
@@ -38,10 +19,10 @@ function CartProduct({ name, image, price, sizePro, id, count }) {
       </div>
       <div className="flex items-center  relative sm:mb-0 mb-3 ">
         <div className="flex items-center gap-4 mr-8 ml-52">
-          <AddProducts dataPro={proInfo} dispatch={dispatch} />
+          <AddProducts sizePro={sizePro} id={id} />
           <span className=" absolute left-16 flex gap-3 flex-row-reverse">
             <p className="text-sm">تومان</p>
-            {proInfo.totalPrice.toLocaleString()}
+            {price.toLocaleString()}
           </span>
         </div>
       </div>
