@@ -1,20 +1,39 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useReducer, useState } from "react";
 import AddProducts from "../Cart/AddProducts";
 import { useParams } from "react-router";
 import "./active.css";
 import clsx from "clsx";
 
 function Product({ menu }) {
-  const [count, setCount] = useState(1);
   const x = useParams();
   const { name, story, image, ingredients, size } = menu.categories
     .flatMap((e) => e.items)
     .filter((e) => e.name === x.elemnt)[0];
-  const [sizePro, setSizePro] = useState("lg");
-  const [totalPrice, setTotalPrice] = useState(0);
-  useEffect(() => {
-    setTotalPrice(size[sizePro] * count);
-  }, [sizePro, count]);
+  const reduser = (dataPro, action) => {
+    switch (action.type) {
+      case "SizePro":
+        return {
+          ...dataPro,
+          sizePro: action.payload,
+          totalPrice: dataPro.count * size[action.payload],
+        };
+      case "count":
+        return {
+          ...dataPro,
+          count: action.payload,
+          totalPrice: action.payload * size[dataPro.sizePro],
+        };
+      default:
+        return {
+          ...dataPro,
+        };
+    }
+  };
+  const [dataPro, dispatch] = useReducer(reduser, {
+    count: 1,
+    sizePro: "lg",
+    totalPrice: 1 * size["lg"],
+  });
 
   return (
     <div className="max-w-content mx-auto px-8">
@@ -62,10 +81,11 @@ function Product({ menu }) {
                 <div
                   className={clsx(
                     "border border-box-border py-1 px-3 text-sm rounded-xl cursor-pointer hover:bg-coffee-bg hover:text-text-header transition duration-300 flex items-center justify-center ",
-                    sizePro === "xl" && "active",
+
+                    dataPro.sizePro === "xl" && "active",
                   )}
                   onClick={() => {
-                    setSizePro("xl");
+                    dispatch({ type: "SizePro", payload: "xl" });
                   }}
                 >
                   بزرگ
@@ -73,10 +93,10 @@ function Product({ menu }) {
                 <div
                   className={clsx(
                     "border border-box-border py-1 px-3 text-sm rounded-xl cursor-pointer hover:bg-coffee-bg hover:text-text-header transition duration-300 flex items-center justify-center ",
-                    sizePro === "lg" && "active",
+                    dataPro.sizePro === "lg" && "active",
                   )}
                   onClick={() => {
-                    setSizePro("lg");
+                    dispatch({ type: "SizePro", payload: "lg" });
                   }}
                 >
                   متوسط
@@ -84,10 +104,10 @@ function Product({ menu }) {
                 <div
                   className={clsx(
                     "border border-box-border py-1 px-3 text-sm rounded-xl cursor-pointer hover:bg-coffee-bg hover:text-text-header transition duration-300 flex items-center justify-center ",
-                    sizePro === "sm" && "active",
+                    dataPro.sizePro === "sm" && "active",
                   )}
                   onClick={() => {
-                    setSizePro("sm");
+                    dispatch({ type: "SizePro", payload: "sm" });
                   }}
                 >
                   کوچک
@@ -97,12 +117,12 @@ function Product({ menu }) {
             <div className="mt-8 w-full border border-box-border rounded-lg flex items-center justify-between px-3">
               <span>قیمت :</span>
               <div className="flex items-center">
-                <span>{totalPrice.toLocaleString()}</span>
+                <span>{dataPro.totalPrice.toLocaleString()}</span>
                 <p className="text-[10px] rotate-90 py-4">تومان</p>
               </div>
             </div>
             <div className="flex items-center justify-between flex-wrap gap-4 mt-4">
-              <AddProducts count={count} setCount={setCount} />
+              <AddProducts dataPro={dataPro} dispatch={dispatch} />
               <div className="cursor-pointer bg-coffee-bg text-sm text-text-header rounded-lg px-3 py-2">
                 افزودن به سبد خرید
               </div>

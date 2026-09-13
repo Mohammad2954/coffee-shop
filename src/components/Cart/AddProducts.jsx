@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 
-function AddProducts({ count, setCount }) {
+function AddProducts({ dataPro, dispatch }) {
   const increas = () => {
-    if (count < 10) {
-      setCount(count + 1);
+    if (dataPro.count < 10) {
+      dispatch({ type: "count", payload: dataPro.count + 1 });
     } else {
       toast.error("بیشتر از حد مجاز");
     }
   };
   const decrise = () => {
-    if (count > 1) {
-      setCount(count - 1);
+    if (dataPro.count > 1) {
+      dispatch({ type: "count", payload: dataPro.count - 1 });
     } else {
       toast.error("کمتر از حد مجاز");
     }
@@ -40,7 +40,7 @@ function AddProducts({ count, setCount }) {
             />
           </svg>
         </div>
-        <span>{count}</span>
+        <span>{dataPro?.count}</span>
         <div
           onClick={() => {
             decrise();
