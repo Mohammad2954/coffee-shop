@@ -3,10 +3,11 @@ import AddProducts from "../Cart/AddProducts";
 import { useParams } from "react-router";
 import "./active.css";
 import clsx from "clsx";
+import { useCartStor } from "../../store/useCartStor";
 
 function Product({ menu }) {
   const x = useParams();
-  const { name, story, image, ingredients, size } = menu.categories
+  const { id, name, story, image, ingredients, size } = menu.categories
     .flatMap((e) => e.items)
     .filter((e) => e.name === x.elemnt)[0];
   const reduser = (dataPro, action) => {
@@ -34,6 +35,20 @@ function Product({ menu }) {
     sizePro: "lg",
     totalPrice: 1 * size["lg"],
   });
+  const addCartStor = useCartStor((state) => state.addCart);
+
+  const handleaddCart = () => {
+    const pro = {
+      id,
+      name,
+      story,
+      image,
+      count: dataPro ? dataPro.count : 1,
+      sizePro: dataPro ? dataPro.sizePro : "lg",
+      price: dataPro ? dataPro.totalPrice : 1 * size["lg"],
+    };
+    addCartStor(pro);
+  };
 
   return (
     <div className="max-w-content mx-auto px-8">
@@ -123,9 +138,21 @@ function Product({ menu }) {
             </div>
             <div className="flex items-center justify-between flex-wrap gap-4 mt-4">
               <AddProducts dataPro={dataPro} dispatch={dispatch} />
-              <div className="cursor-pointer bg-coffee-bg text-sm text-text-header rounded-lg px-3 py-2">
+              <div
+                onClick={() => {
+                  handleaddCart();
+                }}
+                className="cursor-pointer bg-coffee-bg text-sm text-text-header rounded-lg px-3 py-2"
+              >
                 افزودن به سبد خرید
               </div>
+              <button
+                onClick={() => {
+                  delCart();
+                }}
+              >
+                delet
+              </button>
             </div>
           </div>
         </div>
