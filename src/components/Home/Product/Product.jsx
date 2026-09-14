@@ -5,19 +5,23 @@ function Product({ name, description, price, image }) {
   const x = useNavigate();
 
   return (
-    <div className="bg-white h-[365px] flex flex-col justify-between  border border-[#E2D9C8] rounded-lg p-4 ">
+    <div className="bg-white h-[365px] flex flex-col justify-between  border border-[#E2D9C8] rounded-lg p-4 transition duration-300 sm:hover:border-none sm:hover:bg-[#603709a0]  z-50">
       <div>
         <div className=" relative">
           <img
             src={image}
-            className="h-[13rem] w-full rounded-lg"
+            className="h-[13rem] w-full rounded-lg cursor-pointer"
             alt=""
+            onClick={() => {
+              x(`/product/${name}`);
+            }}
             onError={(e) => {
               e.target.src = "https://placehold.co/400x300?text=No+Image";
             }}
           />
           <svg
-            className="absolute top-1 right-1 w-6 h-6 text-white"
+            onClick={() => console.log("svg")}
+            className="absolute top-1 right-1 w-6 h-6 text-white hover:text-red-500 hover:fill-red-500 cursor-pointer "
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"

@@ -31,7 +31,7 @@ function Cart() {
             <div className="border-b border-bs-olive-800 flex items-center justify-between px-2 py-4">
               <span>تخفیف :</span>
               <div className="flex items-center gap-2">
-                <span>25000</span>
+                <span>0</span>
                 <span className="text-[10px]"> تومان</span>
               </div>
             </div>

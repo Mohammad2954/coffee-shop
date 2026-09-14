@@ -10,7 +10,7 @@ const Slider = ({ items }) => {
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
       <Swiper
-        className="custom-swiper relative  h-[26rem]"
+        className="custom-swiper relative  h-[27rem] "
         modules={[Navigation, Pagination, Autoplay]}
         spaceBetween={20}
         slidesPerView={1}
