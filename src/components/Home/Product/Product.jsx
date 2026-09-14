@@ -1,8 +1,14 @@
 import React from "react";
 import { useNavigate } from "react-router";
 
-function Product({ name, description, price, image }) {
+import { useStoreLove } from "../../../store/useStoreLove";
+import clsx from "clsx";
+
+function Product({ name, description, price, image, id, love }) {
+  console.log(love);
+
   const x = useNavigate();
+  const addLoveItem = useStoreLove((state) => state.addLoveItem);
 
   return (
     <div className="bg-white h-[365px] flex flex-col justify-between  border border-[#E2D9C8] rounded-lg p-4 transition duration-300 sm:hover:border-none sm:hover:bg-[#603709a0]  z-50">
@@ -20,8 +26,11 @@ function Product({ name, description, price, image }) {
             }}
           />
           <svg
-            onClick={() => console.log("svg")}
-            className="absolute top-1 right-1 w-6 h-6 text-white hover:text-red-500 hover:fill-red-500 cursor-pointer "
+            onClick={() => addLoveItem(id)}
+            className={clsx(
+              "absolute top-1 right-1 w-6 h-6   cursor-pointer ",
+              love ? "text-red-500 fill-red-500" : "fill-none text-white",
+            )}
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"

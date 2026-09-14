@@ -1,7 +1,10 @@
 import AddTitle from "../../All/AddTitle.jsx";
 import Slider from "../../Slider/Slider";
+import { useStoreLove } from "../../../store/useStoreLove.js";
 
-function PopProduct({ popProducts }) {
+function PopProduct() {
+  const AllData = useStoreLove((state) => state.AllData);
+  const popProducts = AllData.filter((e) => e.is_popular === true);
   return (
     <div className=" relative">
       <div className="max-w-content mx-auto px-8 mt-16 z-10 relative">

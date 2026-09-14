@@ -6,7 +6,6 @@ function AddProducts({ dataPro, dispatch, id, sizePro }) {
   const increaseDate = useCartStor((state) => state.increaseDate);
   const decriseData = useCartStor((state) => state.decriseData);
   const coutElem = useCartStor((state) => state.coutElem);
-  // console.log(coutElem(id, sizePro));
 
   const increas = () => {
     if (dataPro.count < 10) {
