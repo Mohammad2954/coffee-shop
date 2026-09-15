@@ -10,6 +10,7 @@ import ContactUs from "../pages/ContactUs";
 import Blog from "../pages/Blog";
 import About from "../pages/About";
 import ProductPage from "../pages/ProductPage";
+import Populer from "../pages/Populer";
 const route = createBrowserRouter([
   {
     path: "/",
@@ -24,6 +25,7 @@ const route = createBrowserRouter([
       { path: "blog", element: <Blog /> },
       { path: "about", element: <About /> },
       { path: "product/:elemnt", element: <ProductPage /> },
+      { path: "populer", element: <Populer /> },
       {
         path: "/*",
         element: <Page404 />,

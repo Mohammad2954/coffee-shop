@@ -5,8 +5,6 @@ import { useStoreLove } from "../../../store/useStoreLove";
 import clsx from "clsx";
 
 function Product({ name, description, price, image, id, love }) {
-  console.log(love);
-
   const x = useNavigate();
   const addLoveItem = useStoreLove((state) => state.addLoveItem);
 
@@ -58,7 +56,13 @@ function Product({ name, description, price, image, id, love }) {
       </div>
       <div className="flex items-center justify-between mt-3">
         <span className="font-bold">{price.toLocaleString()}</span>
-        <button className="bg-coffee-bg  text-white text-[13px] py-1 px-4 rounded-sm">
+        <button
+          className="bg-coffee-bg  text-white text-[13px] py-1 px-4 rounded-sm cursor-pointer"
+          onClick={() => {
+            console.log(name);
+            x(`/product/${name}`);
+          }}
+        >
           سفارش
         </button>
       </div>
