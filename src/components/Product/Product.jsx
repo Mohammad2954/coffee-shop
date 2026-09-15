@@ -5,7 +5,7 @@ import "./active.css";
 import clsx from "clsx";
 import { useCartStor } from "../../store/useCartStor";
 
-function Product({ menu }) {
+function Product({ menu, setName }) {
   const x = useParams();
   const { id, name, story, image, ingredients, size, description } =
     menu.categories
@@ -36,6 +36,7 @@ function Product({ menu }) {
     sizePro: "lg",
     totalPrice: 1 * size["lg"],
   });
+  setName(name);
 
   const addCartStor = useCartStor((state) => state.addCart);
   const increaseDate = useCartStor((state) => state.increaseDate);

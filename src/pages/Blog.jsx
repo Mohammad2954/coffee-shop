@@ -1,16 +1,12 @@
 import React from "react";
 import BreadCramb from "../components/BreadCramb/BreadCramb";
 import AddTitle from "../components/All/AddTitle";
+import TopPageContent from "../components/TopPageContent/TopPageContent";
 
 function Blog() {
   return (
     <div className="max-w-content mx-auto px-8">
-      <div className="my-8">
-        <BreadCramb />
-        <div className="mt-8 mr-4">
-          <AddTitle title={"بلاگ"} />
-        </div>
-      </div>
+      <TopPageContent message={"وبلاگ"} />
       <div className="grid grid-cols-4 gap-3">
         <article className=" col-span-full sm:col-span-2 lg:col-span-1  shadow-[0_0_40px_-5px_rgba(0,0,0,0.25)] rounded-lg overflow-hidden p-4">
           <img src="/img/blog/blog.jpg" alt="" className="w-full " />

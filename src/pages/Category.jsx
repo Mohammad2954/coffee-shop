@@ -1,4 +1,3 @@
-import BreadCramb from "../components/BreadCramb/BreadCramb";
 import Sidebar from "../components/Category/Sidebar";
 import Sorted from "../components/Category/Sorted";
 import Product from "../components/Home/Product/Product";
@@ -7,6 +6,7 @@ import { useGetProducts } from "../components/hooks/useGetProducts.jsx";
 import { API_URL } from "../components/constants/api.js";
 import LoaderSpinner from "../components/LoaderSpiner/LoaderSpinner.jsx";
 import { useNavigate } from "react-router";
+import TopPageContent from "../components/TopPageContent/TopPageContent.jsx";
 
 function Category() {
   const { data: menu, isLoading, error } = useGetProducts({ url: API_URL });
@@ -19,7 +19,7 @@ function Category() {
 
   return (
     <div className=" mx-auto mt-20 px-8">
-      <BreadCramb />
+      <TopPageContent message={"دسته بندی"} />
       <div className=" bg-[#FFE5BE]    px-8  rounded-lg flex items-center justify-between py-4">
         <div className="flex gap-4 justify-between ga-4 w-full sm:flex-row flex-col">
           <div className="flex items-center gap-3 h-8">

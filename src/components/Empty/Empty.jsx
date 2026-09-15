@@ -8,7 +8,7 @@ function Empty({ text }) {
         className="w-[22rem] mx-auto"
         alt="empty"
       />
-      <h3 className="text-center">{text}</h3>
+      <h3 className="text-center font-bold sm:text-xl text-coffee">{text}</h3>
     </div>
   );
 }

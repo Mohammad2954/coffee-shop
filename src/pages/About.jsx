@@ -1,16 +1,11 @@
 import React from "react";
-import BreadCramb from "../components/BreadCramb/BreadCramb";
-import AddTitle from "../components/All/AddTitle";
+
+import TopPageContent from "../components/TopPageContent/TopPageContent";
 
 function About() {
   return (
     <div className="max-w-content mx-auto px-8">
-      <div className="my-8">
-        <BreadCramb />
-        <div className="mt-8 mr-4">
-          <AddTitle title={"درباره ما"} />
-        </div>
-      </div>
+      <TopPageContent message={"درباره ما"} />
       <div className="shadow-[0_0_40px_-5px_rgba(0,0,0,0.25)] bg-coffee-bg text-text-header rounded-lg p-4 px-6">
         <h3 className="text-xl font-bold my-2">
           به دنیای عطر و طعم واقعی قهوه، خوش آمدید!
