@@ -4,13 +4,19 @@ import { useParams } from "react-router";
 import "./active.css";
 import clsx from "clsx";
 import { useCartStor } from "../../store/useCartStor";
+import { useStoreLove } from "../../store/useStoreLove";
 
-function Product({ menu, setName }) {
-  const x = useParams();
-  const { id, name, story, image, ingredients, size, description } =
-    menu.categories
-      .flatMap((e) => e.items)
-      .filter((e) => e.name === x.elemnt)[0];
+function Product({ item }) {
+  const [love, setlove] = useState(false);
+  const { id, name, story, image, ingredients, size, description } = item;
+  const AllData = useStoreLove((state) => state.AllData);
+  const addLoveItem = useStoreLove((state) => state.addLoveItem);
+  AllData.find((e) => {
+    if (e.love === true && e.id === id && love === false) {
+      setlove(true);
+    }
+  });
+
   const reduser = (dataPro, action) => {
     switch (action.type) {
       case "SizePro":
@@ -36,11 +42,7 @@ function Product({ menu, setName }) {
     sizePro: "lg",
     totalPrice: 1 * size["lg"],
   });
-  setName(name);
-
   const addCartStor = useCartStor((state) => state.addCart);
-  const increaseDate = useCartStor((state) => state.increaseDate);
-  const decriseData = useCartStor((state) => state.decriseData);
 
   const delCart = useCartStor((state) => state.delCart);
   const handleaddCart = () => {
@@ -65,19 +67,27 @@ function Product({ menu, setName }) {
           <div className="flex  justify-between gap-4 flex-col lg:flex-row ">
             <div className=" relative">
               <img src={image} alt="" className=" w-full rounded-lg" />
+
               <svg
-                class="absolute top-1 right-1 w-6 h-6 text-white"
+                onClick={() => {
+                  addLoveItem(id);
+                  setlove(!love);
+                }}
+                className={clsx(
+                  "absolute top-1 right-1 w-6 h-6   cursor-pointer ",
+                  love ? "text-red-500 fill-red-500" : "fill-none text-white",
+                )}
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke-width="2"
+                strokeWidth="2"
                 stroke="currentColor"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
-                ></path>
+                />
               </svg>
             </div>
             <div>
