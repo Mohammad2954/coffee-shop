@@ -16,8 +16,12 @@ const Slider = ({ items }) => {
         slidesPerView={1}
         navigation
         pagination={{ clickable: true }}
-        autoplay={{ delay: 3000 }}
-        loop
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        }}
+        loop={items.length >= 4}
         breakpoints={{
           640: { slidesPerView: 2 },
           768: { slidesPerView: 3 },
