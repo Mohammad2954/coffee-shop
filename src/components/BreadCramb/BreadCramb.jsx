@@ -1,29 +1,38 @@
 import { useState } from "react";
-import { useMatch, useMatches } from "react-router";
+import { useMatch, useMatches, useParams } from "react-router";
 
 function BreadCramb() {
   const findCat = useMatches();
+  const x = useParams();
+
   let pathfind = findCat
     .map((e) => {
-      switch (e.pathname) {
-        case "/":
+      switch (e.pathname.split("/")[1]) {
+        case "":
           return "خانه";
-        case "/blog":
+        case "blog":
           return "وبلاگ";
-        case "/populer":
+        case "populer":
           return "مورد علاقه ها";
-        case "/cart":
+        case "cart":
           return "سبد خرید";
-        case "/about":
+        case "about":
           return "درباره ما";
-        case "/contact-us":
+        case "contact-us":
           return "ارتباط با ما";
+        case "category":
+          return "دسته بندی";
+        case "product":
+          return "محصولات";
 
         default:
           break;
       }
     })
     .filter((e) => e !== undefined);
+  if (x.elemnt !== undefined) {
+    pathfind.push(x.elemnt);
+  }
 
   return (
     <div className="w-fit py-1 px-4 bg-coffee-bg rounded-full mr-2 mb-4 flex item center gap-2">
