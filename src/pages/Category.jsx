@@ -8,40 +8,61 @@ import LoaderSpinner from "../components/LoaderSpiner/LoaderSpinner.jsx";
 import { useNavigate, useParams } from "react-router";
 import TopPageContent from "../components/TopPageContent/TopPageContent.jsx";
 import { useEffect, useState } from "react";
+import { useStoreLove } from "../store/useStoreLove.js";
 
 function Category() {
+  const { data: menu, isLoading, error } = useGetProducts({ url: API_URL });
   const x = useParams();
   const [result, setResult] = useState([]);
   const [findProduct, setFindProduct] = useState("");
-  const { data: menu, isLoading, error } = useGetProducts({ url: API_URL });
+  const AllData = useStoreLove((state) => state.AllData);
 
   useEffect(() => {
     if (menu) {
       findFerstfunc();
+      // checkLove();
     }
   }, [menu]);
+  useEffect(() => {
+    checkLove(result);
+  }, [AllData]);
 
   const findFerstfunc = () => {
-    const findFerst = menu.categories.filter((e) => {
+    let findFerst = menu.categories.filter((e) => {
       if (e.name === x.elemnt) {
-        return e;
+        return { ...e };
       }
     })[0].items;
-    setResult(findFerst);
+
+    checkLove(findFerst);
   };
   const findProductFunc = () => {
     if (findProduct.length > 0) {
       const product = menu.categories
         .flatMap((e) => e.items)
         .filter((e) => {
-          if (e.name.includes(findProduct)) {
+          if (e.name.includes(findProduct.trim())) {
             return e;
           }
         });
-      setResult(product);
+      checkLove(product);
     } else {
       findFerstfunc();
     }
+  };
+
+  const checkLove = (produc) => {
+    const newResult = produc.map((product) => {
+      const lovedProduct = AllData.find((love) => love.id === product.id);
+
+      if (lovedProduct) {
+        return { ...product, ...lovedProduct };
+      }
+
+      return product;
+    });
+
+    setResult(newResult);
   };
 
   if (isLoading) return <LoaderSpinner />;
@@ -120,7 +141,7 @@ function Category() {
         </div>
         <div className="col-span-4 sm:col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
           {result.map((event) => (
-            <Product {...event} key={event.id} border={true} />
+            <Product {...event} key={event.id} border={true} hide={false} />
           ))}
         </div>
       </div>
