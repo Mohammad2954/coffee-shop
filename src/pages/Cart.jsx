@@ -11,7 +11,7 @@ function Cart() {
   }, 0);
 
   return (
-    <div className="mt-20 max-w-content mx-auto px-8">
+    <div className=" max-w-content mx-auto px-8">
       <TopPageContent message={"سبد خرید"} />
       {allItem.length > 0 ? (
         <div className="grid grid-cols-12 gap-6">

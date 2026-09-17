@@ -35,7 +35,7 @@ function BreadCramb() {
   }
 
   return (
-    <div className="w-fit py-1 px-4 bg-coffee-bg rounded-full mr-2 mb-4 flex item center gap-2">
+    <div className="w-fit py-1 px-4 bg-coffee-bg rounded-full mr-2 my-4 flex item center gap-2">
       {pathfind.map((e, index) => {
         return (
           <p className="text-sm text-text-header ">

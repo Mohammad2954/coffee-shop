@@ -4,7 +4,7 @@ import AddTitle from "../All/AddTitle";
 
 function TopPageContent({ message }) {
   return (
-    <div>
+    <div className="my-7">
       <BreadCramb />
       <div className="mt-8 mr-16">
         <AddTitle title={message} />

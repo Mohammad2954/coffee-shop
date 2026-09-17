@@ -62,7 +62,7 @@ function Product({ item }) {
 
   return (
     <div className="max-w-content mx-auto px-8">
-      <div className="grid grid-cols-12 gap-6 mt-20">
+      <div className="grid grid-cols-12 gap-6 ">
         <div className="w-full col-span-full sm:col-span-8 p-4 shadow-[0_0_40px_-5px_rgba(0,0,0,0.25)]  rounded-lg ">
           <div className="flex  justify-between gap-4 flex-col lg:flex-row ">
             <div className=" relative">

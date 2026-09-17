@@ -5,18 +5,23 @@ import Paigination from "../components/Paigination/Paigination";
 import { useGetProducts } from "../components/hooks/useGetProducts.jsx";
 import { API_URL } from "../components/constants/api.js";
 import LoaderSpinner from "../components/LoaderSpiner/LoaderSpinner.jsx";
-import { useNavigate } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import TopPageContent from "../components/TopPageContent/TopPageContent.jsx";
 
 function Category() {
+  const x = useParams();
+  console.log(x.elemnt);
+
   const { data: menu, isLoading, error } = useGetProducts({ url: API_URL });
 
   if (isLoading) return <LoaderSpinner />;
   if (error) return <div>خطا: {error.message}</div>;
-  const result = menu.categories
-    .flatMap((e) => e.items)
-    .filter((e) => e.is_popular === true);
 
+  const result = menu.categories.filter((e) => {
+    if (e.name === x.elemnt) {
+      return e;
+    }
+  })[0].items;
   return (
     <div className=" mx-auto mt-20 px-8">
       <TopPageContent message={"دسته بندی"} />
