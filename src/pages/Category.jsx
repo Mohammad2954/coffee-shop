@@ -7,7 +7,7 @@ import { API_URL } from "../components/constants/api.js";
 import LoaderSpinner from "../components/LoaderSpiner/LoaderSpinner.jsx";
 import { useNavigate, useParams } from "react-router";
 import TopPageContent from "../components/TopPageContent/TopPageContent.jsx";
-import { useEffect, useState } from "react";
+import { useEffect, useReducer, useState } from "react";
 import { useStoreLove } from "../store/useStoreLove.js";
 
 function Category() {
@@ -20,7 +20,6 @@ function Category() {
   useEffect(() => {
     if (menu) {
       findFerstfunc();
-      // checkLove();
     }
   }, [menu]);
   useEffect(() => {
@@ -64,7 +63,39 @@ function Category() {
 
     setResult(newResult);
   };
+  const getPopularityScore = (product) => {
+    if (product.is_popular === true) return 2;
+    if (product.is_popular === false) return 1;
+    return 0;
+  };
+  const reducer = (sortedpro, action) => {
+    switch (action.type) {
+      case "pop":
+        result.sort((a, b) => getPopularityScore(b) - getPopularityScore(a));
+        return { ...sortedpro, sort: action.type, value: action.payload };
 
+      case "cheep":
+        result.sort((a, b) => a.price - b.price);
+
+        return { ...sortedpro, sort: action.type, value: action.payload };
+
+      case "expensive":
+        result.sort((a, b) => b.price - a.price);
+        return { ...sortedpro, sort: action.type, value: action.payload };
+
+      default:
+        findFerstfunc();
+        return {
+          ...sortedpro,
+          value: "مرتب سازی بر اساس جدید ترین",
+          sort: "new",
+        };
+    }
+  };
+  const [sortedpro, dispatch] = useReducer(reducer, {
+    sort: "new",
+    value: "مرتب سازی بر اساس جدید ترین",
+  });
   if (isLoading) return <LoaderSpinner />;
   if (error) return <div>خطا: {error.message}</div>;
   return (
@@ -132,14 +163,14 @@ function Category() {
             </div>
           </div>
 
-          <Sorted />
+          <Sorted sortedpro={sortedpro} dispatch={dispatch} />
         </div>
       </div>
       <div className="grid grid-cols-4">
         <div className="hidden sm:block">
           <Sidebar />
         </div>
-        <div className="col-span-4 sm:col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+        <div className="col-span-4 sm:col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 z-5">
           {result.map((event) => (
             <Product {...event} key={event.id} border={true} hide={false} />
           ))}

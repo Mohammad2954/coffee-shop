@@ -8,7 +8,7 @@ function Header() {
   const [isShow, setIsShow] = useState(false);
 
   return (
-    <div className="bg-coffee-bg  border-box-border border-b-2  flex items-center justify-between  w-full mx-auto px-8 py-2  z-50000 sticky top-0">
+    <div className="bg-coffee-bg  border-box-border border-b-2  flex items-center justify-between  w-full mx-auto px-8 py-2  z-1000 sticky top-0">
       <div className="block sm:hidden">
         <button
           onClick={() => {
