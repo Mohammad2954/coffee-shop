@@ -27,7 +27,7 @@ function Product({
         >
           <img
             src={image}
-            className={`${typeShow === "row" ? "h-[10rem] w-[10rem]" : "h-[13rem]"} w-full rounded-lg cursor-pointer`}
+            className={`${typeShow === "row" ? "h-[10rem] " : "h-[13rem]"} w-full rounded-lg cursor-pointer`}
             alt=""
             onClick={() => {
               x(`/product/${name}`);
@@ -66,10 +66,10 @@ function Product({
           >
             {name}
           </h3>
-          <p className="text-[12px] mt-1 line-clamp-2">{description}</p>
+          <p className="text-[12px] mt-1 line-clamp-2 ">{description}</p>
           {typeShow === "row" ? (
             <div class="flex items-center justify-between absolute left-4 bottom-4 gap-4">
-              <span class="font-bold">45,000</span>
+              <span class="font-bold">{price.toLocaleString()}</span>
               <button class="bg-coffee-bg  text-white text-[13px] py-1 px-4 rounded-sm cursor-pointer">
                 سفارش
               </button>

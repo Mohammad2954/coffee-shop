@@ -9,6 +9,7 @@ import { useNavigate, useParams } from "react-router";
 import TopPageContent from "../components/TopPageContent/TopPageContent.jsx";
 import { useEffect, useReducer, useState } from "react";
 import { useStoreLove } from "../store/useStoreLove.js";
+import clsx from "clsx";
 
 function Category() {
   const { data: menu, isLoading, error } = useGetProducts({ url: API_URL });
@@ -127,7 +128,10 @@ function Category() {
                 </svg>
               </div>
               <div
-                className={`cursor-pointer rounded-sm  ${typeShow === "row" && "bg-coffee-bg text-text-header"}`}
+                className={clsx(
+                  "cursor-pointer rounded-sm hidden sm:block",
+                  typeShow === "row" && "bg-coffee-bg text-text-header",
+                )}
                 onClick={() => {
                   setTypeShow("row");
                 }}
