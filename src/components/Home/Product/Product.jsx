@@ -4,17 +4,30 @@ import { useNavigate } from "react-router";
 import { useStoreLove } from "../../../store/useStoreLove";
 import clsx from "clsx";
 
-function Product({ name, description, price, image, id, love, hide }) {
+function Product({
+  name,
+  description,
+  price,
+  image,
+  id,
+  love,
+  hide,
+  typeShow,
+}) {
   const x = useNavigate();
   const addLoveItem = useStoreLove((state) => state.addLoveItem);
 
   return (
-    <div className="bg-white h-[365px] flex flex-col justify-between  border border-[#E2D9C8] rounded-lg p-4 transition duration-300 sm:hover:border-none sm:hover:bg-[#603709a0]  z-50">
-      <div>
-        <div className=" relative">
+    <div
+      className={`" relative bg-white ${typeShow === "row" ? "h-[12rem]" : "h-[365px]"} flex flex-col justify-between  border border-[#E2D9C8] rounded-lg p-4 transition duration-300 sm:hover:border-none sm:hover:bg-[#603709a0]  z-50" ${typeShow === "row" && "col-span-full flex-row "}`}
+    >
+      <div className={typeShow === "row" && "flex gap-4"}>
+        <div
+          className={` relative ${typeShow === "row" ? "h-[10rem] w-[10rem]" : "h-[13rem]"}`}
+        >
           <img
             src={image}
-            className="h-[13rem] w-full rounded-lg cursor-pointer"
+            className={`${typeShow === "row" ? "h-[10rem] w-[10rem]" : "h-[13rem]"} w-full rounded-lg cursor-pointer`}
             alt=""
             onClick={() => {
               x(`/product/${name}`);
@@ -54,20 +67,30 @@ function Product({ name, description, price, image, id, love, hide }) {
             {name}
           </h3>
           <p className="text-[12px] mt-1 line-clamp-2">{description}</p>
+          {typeShow === "row" ? (
+            <div class="flex items-center justify-between absolute left-4 bottom-4 gap-4">
+              <span class="font-bold">45,000</span>
+              <button class="bg-coffee-bg  text-white text-[13px] py-1 px-4 rounded-sm cursor-pointer">
+                سفارش
+              </button>
+            </div>
+          ) : null}
         </div>
       </div>
-      <div className="flex items-center justify-between mt-3">
-        <span className="font-bold">{price.toLocaleString()}</span>
-        <button
-          className="bg-coffee-bg  text-white text-[13px] py-1 px-4 rounded-sm cursor-pointer"
-          onClick={() => {
-            console.log(name);
-            x(`/product/${name}`);
-          }}
-        >
-          سفارش
-        </button>
-      </div>
+      {typeShow === "row" ? null : (
+        <div className="flex items-center justify-between mt-3">
+          <span className="font-bold">{price.toLocaleString()}</span>
+          <button
+            className="bg-coffee-bg  text-white text-[13px] py-1 px-4 rounded-sm cursor-pointer"
+            onClick={() => {
+              console.log(name);
+              x(`/product/${name}`);
+            }}
+          >
+            سفارش
+          </button>
+        </div>
+      )}
     </div>
   );
 }

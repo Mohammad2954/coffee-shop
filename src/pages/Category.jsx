@@ -15,13 +15,9 @@ function Category() {
   const x = useParams();
   const [result, setResult] = useState([]);
   const [findProduct, setFindProduct] = useState("");
+  const [typeShow, setTypeShow] = useState("col");
   const AllData = useStoreLove((state) => state.AllData);
 
-  useEffect(() => {
-    if (menu) {
-      findFerstfunc();
-    }
-  }, [menu]);
   useEffect(() => {
     checkLove(result);
   }, [AllData]);
@@ -98,6 +94,11 @@ function Category() {
   });
   if (isLoading) return <LoaderSpinner />;
   if (error) return <div>خطا: {error.message}</div>;
+  useEffect(() => {
+    if (menu) {
+      findFerstfunc();
+    }
+  }, []);
   return (
     <div className=" mx-auto mt-20 px-8">
       <TopPageContent message={"دسته بندی"} />
@@ -105,7 +106,12 @@ function Category() {
         <div className="flex gap-4 justify-between ga-4 w-full sm:flex-row flex-col">
           <div className="flex items-center gap-3 h-8">
             <div className="flex items-center gap-2 ">
-              <div className=" cursor-pointer rounded-sm bg-coffee-bg text-text-header">
+              <div
+                className={`cursor-pointer rounded-sm  ${typeShow === "col" && "bg-coffee-bg text-text-header"}`}
+                onClick={() => {
+                  setTypeShow("col");
+                }}
+              >
                 <svg
                   className=" border border-coffee-bg p-1 rounded-sm h-8 w-8"
                   xmlns="http://www.w3.org/2000/svg"
@@ -120,7 +126,12 @@ function Category() {
                   <path d="M10 10h4v4h-4zm7 0h4v4h-4z"></path>
                 </svg>
               </div>
-              <div className=" cursor-pointer">
+              <div
+                className={`cursor-pointer rounded-sm  ${typeShow === "row" && "bg-coffee-bg text-text-header"}`}
+                onClick={() => {
+                  setTypeShow("row");
+                }}
+              >
                 <svg
                   className=" border border-coffee-bg p-0.5 rounded-sm h-8 w-8"
                   xmlns="http://www.w3.org/2000/svg"
@@ -166,13 +177,21 @@ function Category() {
           <Sorted sortedpro={sortedpro} dispatch={dispatch} />
         </div>
       </div>
-      <div className="grid grid-cols-4">
+      <div className="grid sm:grid-cols-4">
         <div className="hidden sm:block">
           <Sidebar />
         </div>
-        <div className="col-span-4 sm:col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 z-5">
+        <div
+          className={`"col-span-4 sm:col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 z-5" `}
+        >
           {result.map((event) => (
-            <Product {...event} key={event.id} border={true} hide={false} />
+            <Product
+              {...event}
+              key={event.id}
+              border={true}
+              hide={false}
+              typeShow={typeShow}
+            />
           ))}
         </div>
       </div>
