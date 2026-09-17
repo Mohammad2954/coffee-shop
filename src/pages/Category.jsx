@@ -7,21 +7,45 @@ import { API_URL } from "../components/constants/api.js";
 import LoaderSpinner from "../components/LoaderSpiner/LoaderSpinner.jsx";
 import { useNavigate, useParams } from "react-router";
 import TopPageContent from "../components/TopPageContent/TopPageContent.jsx";
+import { useEffect, useState } from "react";
 
 function Category() {
   const x = useParams();
-  console.log(x.elemnt);
-
+  const [result, setResult] = useState([]);
+  const [findProduct, setFindProduct] = useState("");
   const { data: menu, isLoading, error } = useGetProducts({ url: API_URL });
+
+  useEffect(() => {
+    if (menu) {
+      findFerstfunc();
+    }
+  }, [menu]);
+
+  const findFerstfunc = () => {
+    const findFerst = menu.categories.filter((e) => {
+      if (e.name === x.elemnt) {
+        return e;
+      }
+    })[0].items;
+    setResult(findFerst);
+  };
+  const findProductFunc = () => {
+    if (findProduct.length > 0) {
+      const product = menu.categories
+        .flatMap((e) => e.items)
+        .filter((e) => {
+          if (e.name.includes(findProduct)) {
+            return e;
+          }
+        });
+      setResult(product);
+    } else {
+      findFerstfunc();
+    }
+  };
 
   if (isLoading) return <LoaderSpinner />;
   if (error) return <div>خطا: {error.message}</div>;
-
-  const result = menu.categories.filter((e) => {
-    if (e.name === x.elemnt) {
-      return e;
-    }
-  })[0].items;
   return (
     <div className=" mx-auto mt-20 px-8">
       <TopPageContent message={"دسته بندی"} />
@@ -59,11 +83,20 @@ function Category() {
             </div>
             <div className="  relative w-52 h-8">
               <input
+                value={findProduct}
+                onChange={(event) => {
+                  setFindProduct(event.target.value);
+                }}
                 type="text"
                 placeholder="محصول مورد نظر ..."
                 className=" pr-2 absolute left-0 right-0 h-8 text-sm outline-0 border-2 border-coffee-bg rounded-sm"
               />
-              <div>
+              <div
+                className="cursor-pointer"
+                onClick={() => {
+                  findProductFunc();
+                }}
+              >
                 <svg
                   className=" absolute left-2 top-1"
                   xmlns="http://www.w3.org/2000/svg"
