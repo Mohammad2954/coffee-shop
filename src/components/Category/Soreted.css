@@ -6,3 +6,31 @@
     -o-transition: all 400ms ease;
 
 }
+.item-element::before{
+    position: absolute;
+    content: '';
+    width: .4rem;
+    height: .4rem;
+    background-color: black;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+    right: -3.5px;
+    top: 0;
+}
+.item-element::after{
+    position: absolute;
+    content: '';
+    width: .4rem;
+    height: .4rem;
+    background-color: black;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+    right: -3.5px;
+    bottom: 0;
+}

@@ -183,7 +183,16 @@ function Category() {
       </div>
       <div className="grid sm:grid-cols-4">
         <div className="hidden sm:block">
-          <Sidebar />
+          <div>
+            <div className="mt-6">
+              <span className="text-text-box text-lg mb-4 inline-block border-coffee border-b-2">
+                دسته بندی ها
+              </span>
+              {menu.categories.length > 0
+                ? menu.categories.map((e) => <Sidebar {...e} />)
+                : null}
+            </div>
+          </div>
         </div>
         <div
           className={`"col-span-4 sm:col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 z-5" `}
