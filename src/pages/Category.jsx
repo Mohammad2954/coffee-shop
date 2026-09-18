@@ -93,13 +93,13 @@ function Category() {
     sort: "new",
     value: "مرتب سازی بر اساس جدید ترین",
   });
-  if (isLoading) return <LoaderSpinner />;
-  if (error) return <div>خطا: {error.message}</div>;
   useEffect(() => {
     if (menu) {
       findFerstfunc();
     }
-  }, []);
+  }, [menu]);
+  if (isLoading) return <LoaderSpinner />;
+  if (error) return <div>خطا: {error.message}</div>;
   return (
     <div className=" mx-auto mt-20 px-8">
       <TopPageContent message={"دسته بندی"} />
