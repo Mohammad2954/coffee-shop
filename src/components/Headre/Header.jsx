@@ -2,10 +2,13 @@ import { useNavigate } from "react-router";
 import { useState } from "react";
 import AddProducts from "../Cart/AddProducts";
 import clsx from "clsx";
+import { useCartStor } from "../../store/useCartStor";
 
 function Header() {
   const x = useNavigate();
   const [isShow, setIsShow] = useState(false);
+  const item = useCartStor((state) => state.item);
+  console.log(item.length);
 
   return (
     <div className="bg-coffee-bg  border-box-border border-b-2  flex items-center justify-between  w-full mx-auto px-8 py-2  z-1000 sticky top-0">
@@ -126,6 +129,12 @@ function Header() {
           />
         </svg>
         <div className="relative group transition">
+          {item.length > 0 ? (
+            <span className="absolute right-[-.2rem] top-[-.2rem] bg-box-border text-coffee-bg w-4 h-4 flex items-center justify-center text-sm font-bold rounded-full p-2">
+              {item.length}
+            </span>
+          ) : null}
+
           <svg
             className=" cursor-pointer transition"
             onClick={() => {
@@ -142,7 +151,7 @@ function Header() {
               fill="#FFEAD7"
             />
           </svg>
-          <div className=" absolute left-0 top-10 w-96 bg-white border overflow-hidden rounded-lg invisible group-hover:visible opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-600 ease-out ">
+          {/* <div className=" absolute left-0 top-10 w-96 bg-white border overflow-hidden rounded-lg invisible group-hover:visible opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-600 ease-out ">
             <h4 className="text-center mt-2 border-b pb-2">سبد خرید</h4>
 
             <div className="mt-4 flex items-center gap-4 px-3">
@@ -187,7 +196,7 @@ function Header() {
                 </button>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
         <div
           className="transition-all duration-300"

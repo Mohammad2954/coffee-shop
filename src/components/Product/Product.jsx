@@ -44,7 +44,6 @@ function Product({ item }) {
   });
   const addCartStor = useCartStor((state) => state.addCart);
 
-  const delCart = useCartStor((state) => state.delCart);
   const handleaddCart = () => {
     const pro = {
       id,
@@ -164,13 +163,6 @@ function Product({ item }) {
               >
                 افزودن به سبد خرید
               </div>
-              <button
-                onClick={() => {
-                  delCart();
-                }}
-              >
-                delet
-              </button>
             </div>
           </div>
         </div>

@@ -1,12 +1,10 @@
+import { useNavigate } from "react-router";
 import "./Footer.css";
 
 function Footer() {
+  const x = useNavigate();
   return (
     <footer className=" relative   bg-coffee-bg border-box-border border-t-2 mt-12 ">
-      {/* <img src="/img/Footer/bg.jpg"
-        className=" absolute inset-0 w-full h-96 z-0"
-        alt=""/>
-      <div className=" absolute inset-0 h-96 bg-black/40 z-0"></div> */}
       <div className="px-16 py-12">
         <div className="grid  sm:grid-cols-3 lg:grid-cols-4 relative z-10">
           <div className="grid grid-cols-2 sm:grid-cols-5 text-text-header col-span-full">
@@ -85,18 +83,67 @@ function Footer() {
             <div className="   flex-col gap-2 hidden sm:flex">
               <h5>پیشنهاد ما</h5>
               <ul className=" list-disc mr-[12px]">
-                <li>امریکانو</li>
-                <li>لاته</li>
-                <li>اسپرسو</li>
-                <li>هات چاکلت</li>
-                <li>کاپوچینو </li>
+                <li
+                  className="cursor-pointer hover:text-border transition duration-100 ease-in"
+                  onClick={() => {
+                    x("product/اسپرسو سینگل");
+                  }}
+                >
+                  اسپرسو سینگل
+                </li>
+                <li
+                  className="cursor-pointer hover:text-border transition duration-100 ease-in"
+                  onClick={() => {
+                    x("product/براونی شکلاتی");
+                  }}
+                >
+                  براونی شکلاتی
+                </li>
+                <li
+                  className="cursor-pointer hover:text-border transition duration-100 ease-in"
+                  onClick={() => {
+                    x("product/رد ولوت");
+                  }}
+                >
+                  رد ولوت
+                </li>
+                <li
+                  className="cursor-pointer hover:text-border transition duration-100 ease-in"
+                  onClick={() => {
+                    x("product/کاپوچینو");
+                  }}
+                >
+                  کاپوچینو
+                </li>
+                <li
+                  className="cursor-pointer hover:text-border transition duration-100 ease-in"
+                  onClick={() => {
+                    x("product/آیس لاته");
+                  }}
+                >
+                  آیس لاته{" "}
+                </li>
               </ul>
             </div>
             <div className="  flex-col gap-2 hidden sm:flex">
               <h5>ارتباط با ما </h5>
               <ul className="list-disc mr-[12px]">
-                <li>درباره ما</li>
-                <li>پشتیبانی ارتباط با ما</li>
+                <li
+                  onClick={() => {
+                    x("about");
+                  }}
+                  className="cursor-pointer hover:text-border transition duration-100 ease-in"
+                >
+                  درباره ما
+                </li>
+                <li
+                  onClick={() => {
+                    x("contact-us");
+                  }}
+                  className="cursor-pointer hover:text-border transition duration-100 ease-in"
+                >
+                  پشتیبانی ارتباط با ما
+                </li>
               </ul>
             </div>
           </div>
