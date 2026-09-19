@@ -8,8 +8,6 @@ function Header() {
   const x = useNavigate();
   const [isShow, setIsShow] = useState(false);
   const item = useCartStor((state) => state.item);
-  console.log(item.length);
-
   return (
     <div className="bg-coffee-bg  border-box-border border-b-2  flex items-center justify-between  w-full mx-auto px-8 py-2  z-1000 sticky top-0">
       <div className="block sm:hidden">
@@ -31,19 +29,43 @@ function Header() {
           )}
         >
           <ul class=" items-center gap-8 text-text-header sm:flex">
-            <li class=" cursor-pointer hover:bg-border py-2 pr-3 hover:text-coffee-bg transition duration-200 ease-in">
+            <li
+              onClick={() => {
+                x("/");
+                setIsShow(false);
+              }}
+              class=" cursor-pointer hover:bg-border py-2 pr-3 hover:text-coffee-bg transition duration-200 ease-in"
+            >
               خانه
             </li>
             <li class=" cursor-pointer hover:bg-border py-2 pr-3 hover:text-coffee-bg transition duration-200 ease-in">
               پشتیبانی
             </li>
-            <li class=" cursor-pointer hover:bg-border py-2 pr-3 hover:text-coffee-bg transition duration-200 ease-in">
+            <li
+              onClick={() => {
+                x("contact-us");
+                setIsShow(false);
+              }}
+              class=" cursor-pointer hover:bg-border py-2 pr-3 hover:text-coffee-bg transition duration-200 ease-in"
+            >
               ارتباط با ما
             </li>
-            <li class=" cursor-pointer hover:bg-border py-2 pr-3 hover:text-coffee-bg transition duration-200 ease-in">
+            <li
+              onClick={() => {
+                x("about");
+                setIsShow(false);
+              }}
+              class=" cursor-pointer hover:bg-border py-2 pr-3 hover:text-coffee-bg transition duration-200 ease-in"
+            >
               درباره ما
             </li>
-            <li class=" cursor-pointer hover:bg-border py-2 pr-3 hover:text-coffee-bg transition duration-200 ease-in">
+            <li
+              onClick={() => {
+                x("blog");
+                setIsShow(false);
+              }}
+              class=" cursor-pointer hover:bg-border py-2 pr-3 hover:text-coffee-bg transition duration-200 ease-in"
+            >
               بلاگ
             </li>
           </ul>

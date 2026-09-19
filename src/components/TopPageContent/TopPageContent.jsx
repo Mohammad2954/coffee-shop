@@ -1,6 +1,6 @@
 import React from "react";
-import BreadCramb from "@/BreadCramb/BreadCramb";
-import AddTitle from "@/All/AddTitle";
+import BreadCramb from "@/components/BreadCramb/BreadCramb";
+import AddTitle from "@/components/All/AddTitle";
 
 function TopPageContent({ message }) {
   return (

@@ -208,9 +208,9 @@ function Category() {
           ))}
         </div>
       </div>
-      <div className="mt-16">
+      {/* <div className="mt-16">
         <Paigination />
-      </div>
+      </div> */}
     </div>
   );
 }

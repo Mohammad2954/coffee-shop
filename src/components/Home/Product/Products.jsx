@@ -1,6 +1,6 @@
 import Product from "./Product";
-import AddTitle from "@/All/AddTitle";
-import Slider from "@/Slider/Slider";
+import AddTitle from "@/components/All/AddTitle";
+import Slider from "@/components/Slider/Slider";
 import { useStoreLove } from "@/store/useStoreLove.js";
 
 function Products() {

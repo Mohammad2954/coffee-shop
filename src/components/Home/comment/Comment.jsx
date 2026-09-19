@@ -1,4 +1,4 @@
-import { commentsData } from "@/commendata.js";
+import { commentsData } from "@/components/commendata.js";
 import Comments from "./Comments.jsx";
 function Comment() {
   return (
