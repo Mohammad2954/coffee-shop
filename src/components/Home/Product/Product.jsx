@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router";
 
-import { useStoreLove } from "../../../store/useStoreLove";
+import { useStoreLove } from "@/store/useStoreLove";
 import clsx from "clsx";
 
 function Product({

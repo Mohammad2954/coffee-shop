@@ -1,14 +1,14 @@
-import Sidebar from "../components/Category/Sidebar";
-import Sorted from "../components/Category/Sorted";
-import Product from "../components/Home/Product/Product";
-import Paigination from "../components/Paigination/Paigination";
-import { useGetProducts } from "../components/hooks/useGetProducts.jsx";
-import { API_URL } from "../components/constants/api.js";
-import LoaderSpinner from "../components/LoaderSpiner/LoaderSpinner.jsx";
+import Sidebar from "@/components/Category/Sidebar";
+import Sorted from "@/components/Category/Sorted";
+import Product from "@/components/Home/Product/Product";
+import Paigination from "@/components/Paigination/Paigination";
+import { useGetProducts } from "@/components/hooks/useGetProducts.jsx";
+import { API_URL } from "@/components/constants/api.js";
+import LoaderSpinner from "@/components/LoaderSpiner/LoaderSpinner.jsx";
 import { useNavigate, useParams } from "react-router";
-import TopPageContent from "../components/TopPageContent/TopPageContent.jsx";
+import TopPageContent from "@/components/TopPageContent/TopPageContent.jsx";
 import { useEffect, useReducer, useState } from "react";
-import { useStoreLove } from "../store/useStoreLove.js";
+import { useStoreLove } from "@/store/useStoreLove.js";
 import clsx from "clsx";
 
 function Category() {

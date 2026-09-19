@@ -3,8 +3,8 @@ import AddProducts from "../Cart/AddProducts";
 import { useParams } from "react-router";
 import "./active.css";
 import clsx from "clsx";
-import { useCartStor } from "../../store/useCartStor";
-import { useStoreLove } from "../../store/useStoreLove";
+import { useCartStor } from "@/store/useCartStor";
+import { useStoreLove } from "@/store/useStoreLove";
 
 function Product({ item }) {
   const [love, setlove] = useState(false);

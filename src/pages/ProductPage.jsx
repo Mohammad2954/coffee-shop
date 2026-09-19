@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import Product from "../components/Product/Product";
-import BreadCramb from "../components/BreadCramb/BreadCramb";
+import Product from "@/components/Product/Product";
+import BreadCramb from "@/components/BreadCramb/BreadCramb";
 import { useLocation, useMatch, useMatches, useParams } from "react-router";
-import { useGetProducts } from "../components/hooks/useGetProducts.jsx";
-import { API_URL } from "../components/constants/api.js";
-import LoaderSpinner from "../components/LoaderSpiner/LoaderSpinner.jsx";
-import TopPageContent from "../components/TopPageContent/TopPageContent.jsx";
+import { useGetProducts } from "@/components/hooks/useGetProducts.jsx";
+import { API_URL } from "@/components/constants/api.js";
+import LoaderSpinner from "@/components/LoaderSpiner/LoaderSpinner.jsx";
+import TopPageContent from "@/components/TopPageContent/TopPageContent.jsx";
 function ProductPage() {
   const x = useParams();
   const { data: menu, isLoading, error } = useGetProducts({ url: API_URL });

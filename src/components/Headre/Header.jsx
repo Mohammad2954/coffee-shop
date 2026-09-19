@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router";
 import { useState } from "react";
-import AddProducts from "../Cart/AddProducts";
+// import AddProducts from "../Cart/AddProducts";
 import clsx from "clsx";
-import { useCartStor } from "../../store/useCartStor";
+import { useCartStor } from "@/store/useCartStor";
 
 function Header() {
   const x = useNavigate();

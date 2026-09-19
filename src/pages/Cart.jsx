@@ -1,9 +1,9 @@
-import BreadCramb from "../components/BreadCramb/BreadCramb";
-import CartProduct from "../components/Cart/CartProduct";
-import { useCartStor } from "../store/useCartStor";
-import Empty from "../components/Empty/Empty";
-import AddTitle from "../components/All/AddTitle";
-import TopPageContent from "../components/TopPageContent/TopPageContent";
+import BreadCramb from "@/components/BreadCramb/BreadCramb";
+import CartProduct from "@/components/Cart/CartProduct";
+import { useCartStor } from "@/store/useCartStor";
+import Empty from "@/components/Empty/Empty";
+import AddTitle from "@/components/All/AddTitle";
+import TopPageContent from "@/components/TopPageContent/TopPageContent";
 function Cart() {
   const allItem = useCartStor((state) => state.item);
   const total = allItem.reduce((prev, nex) => {

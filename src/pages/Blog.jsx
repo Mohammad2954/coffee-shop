@@ -1,7 +1,7 @@
 import React from "react";
-import BreadCramb from "../components/BreadCramb/BreadCramb";
-import AddTitle from "../components/All/AddTitle";
-import TopPageContent from "../components/TopPageContent/TopPageContent";
+import BreadCramb from "@/components/BreadCramb/BreadCramb";
+import AddTitle from "@/components/All/AddTitle";
+import TopPageContent from "@/components/TopPageContent/TopPageContent";
 
 function Blog() {
   return (

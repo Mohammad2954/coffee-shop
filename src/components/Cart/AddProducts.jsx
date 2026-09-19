@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import { useCartStor } from "../../store/useCartStor";
+import { useCartStor } from "@/store/useCartStor";
 
 function AddProducts({ dataPro, dispatch, id, sizePro }) {
   const increaseDate = useCartStor((state) => state.increaseDate);

@@ -1,7 +1,7 @@
 import Product from "./Product";
-import AddTitle from "../../All/AddTitle";
-import Slider from "../../Slider/Slider";
-import { useStoreLove } from "../../../store/useStoreLove.js";
+import AddTitle from "@/All/AddTitle";
+import Slider from "@/Slider/Slider";
+import { useStoreLove } from "@/store/useStoreLove.js";
 
 function Products() {
   const AllData = useStoreLove((state) => state.AllData);

@@ -1,8 +1,8 @@
 import React from "react";
-import { useStoreLove } from "../store/useStoreLove";
-import Product from "../components/Home/Product/Product";
-import Empty from "../components/Empty/Empty";
-import TopPageContent from "../components/TopPageContent/TopPageContent";
+import { useStoreLove } from "@/store/useStoreLove";
+import Product from "@/components/Home/Product/Product";
+import Empty from "@/components/Empty/Empty";
+import TopPageContent from "@/components/TopPageContent/TopPageContent";
 
 function Populer() {
   const AllData = useStoreLove((state) => state.AllData);

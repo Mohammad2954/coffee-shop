@@ -1,5 +1,5 @@
 import React from "react";
-import TopPageContent from "../components/TopPageContent/TopPageContent";
+import TopPageContent from "@/components/TopPageContent/TopPageContent";
 
 function ContactUs() {
   return (

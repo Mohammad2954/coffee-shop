@@ -1,14 +1,14 @@
-import CategoryProduct from "../components/Home/CategoryProduct/CategoryProduct";
-import Products from "../components/Home/Product/Products";
-import MainBox from "../components/Home/MainBox/MainBox";
-import PopProduct from "../components/Home/popProduct/PopProduct";
-import Comment from "../components/Home/comment/Comment";
-import Mainheader from "../components/Headre/Mainheader";
-import { useGetProducts } from "../components/hooks/useGetProducts";
-import { API_URL } from "../components/constants/api.js";
-import LoaderSpinner from "../components/LoaderSpiner/LoaderSpinner.jsx";
+import CategoryProduct from "@/components/Home/CategoryProduct/CategoryProduct";
+import Products from "@/components/Home/Product/Products";
+import MainBox from "@/components/Home/MainBox/MainBox";
+import PopProduct from "@/components/Home/popProduct/PopProduct";
+import Comment from "@/components/Home/comment/Comment";
+import Mainheader from "@/components/Headre/Mainheader";
+import { useGetProducts } from "@/components/hooks/useGetProducts";
+import { API_URL } from "@/components/constants/api.js";
+import LoaderSpinner from "@/components/LoaderSpiner/LoaderSpinner.jsx";
 
-import { useStoreLove } from "../store/useStoreLove.js";
+import { useStoreLove } from "@/store/useStoreLove.js";
 import { useEffect } from "react";
 
 function Home() {

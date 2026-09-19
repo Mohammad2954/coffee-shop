@@ -1,5 +1,5 @@
 import { useEffect, useReducer, useState } from "react";
-import { useCartStor } from "../../store/useCartStor";
+import { useCartStor } from "@store/useCartStor";
 import AddProducts from "./AddProducts";
 
 function CartProduct({ name, image, price, sizePro, id }) {

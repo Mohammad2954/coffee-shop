@@ -1,6 +1,6 @@
-import AddTitle from "../../All/AddTitle.jsx";
-import Slider from "../../Slider/Slider";
-import { useStoreLove } from "../../../store/useStoreLove.js";
+import AddTitle from "@/All/AddTitle.jsx";
+import Slider from "@/Slider/Slider";
+import { useStoreLove } from "@/store/useStoreLove.js";
 
 function PopProduct() {
   const AllData = useStoreLove((state) => state.AllData);
